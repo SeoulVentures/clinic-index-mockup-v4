@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>임성균피부과의원 — registry record — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html">02 Clinic list</a>
+  <a href="clinic-detail.html">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html" class="on">04 Registry record (no price)</a>
+  <a href="neighborhood.html">05 Neighborhood guide</a>
+  <a href="procedure.html">06 Procedure page</a>
+  <a href="coverage.html">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">Home</a> / <a href="clinics.html">Clinics</a> /
+    <a href="neighborhood.html">Sincheon</a> / <span>임성균피부과의원</span>
+  </nav>
+</div>
+
+<section class="tight" style="padding-top:18px">
+  <div class="wrap">
+    <div class="detail-grid">
+      <main>
+        <div class="d-head">
+          <div class="d-badges" style="margin-bottom:12px">
+            <span class="src none">no published price</span>
+            <span class="tag brand">Dermatology</span>
+            <span class="tag">송파구</span>
+          </div>
+          <h1>임성균피부과의원</h1>
+          <p class="d-addr">서울특별시 송파구 올림픽로35길 112, 장미아파트 비상가 1동 3층 314호 &middot; Tel <b>02-416-0443</b>
+            &middot; <a href="#" style="color:var(--brand);font-weight:600">View on map</a></p>
+        </div>
+
+        <div class="minimal-note">
+          <div class="mn-t">◷ This clinic is in the registry, but it publishes no price we can read</div>
+          <p>The registry tells us this clinic exists, where it is and when it was registered. It does not tell us what anything costs, and this clinic has no website on file for us to read a price from. So there is no price on this page.</p>
+          <p style="margin-top:9px">That is not a judgement about the clinic. Roughly 1 clinic in 52 across the three districts publishes a price in a form we can read &mdash; the rest either have no site or do not publish an amount. If you need this clinic specifically, ask below and we will pass the question on.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Registry record</h3>
+          <p class="p-sub">Taken from the national medical facility dataset (Ministry of the Interior and Safety).</p>
+          <div class="info-grid">
+            <div class="info-row"><div class="il">Name</div><div class="iv">임성균피부과의원</div></div>
+            <div class="info-row"><div class="il">Department</div><div class="iv">Dermatology</div></div>
+            <div class="info-row"><div class="il">Address</div><div class="iv">서울특별시 송파구 올림픽로35길 112, 장미아파트 비상가 1동 3층 314호</div></div>
+            <div class="info-row"><div class="il">Neighborhood</div><div class="iv">신천동, 송파구</div></div>
+            <div class="info-row"><div class="il">Telephone</div><div class="iv">02-416-0443</div></div>
+            <div class="info-row"><div class="il">Registered</div><div class="iv">Opened 1994</div></div>
+            <div class="info-row"><div class="il">Price</div><div class="iv muted">Not published &mdash; not available</div></div>
+            <div class="info-row"><div class="il">Coordinates</div><div class="iv muted">37.517819, 127.1017233 (registry)</div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>What we did not check</h3>
+          <p class="p-sub">We only publish the registry fields for a clinic like this one. These remain unknown.</p>
+          <div class="stack-sm">
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag">Price list</span>
+              <span class="small muted" style="flex:1">No website on file, no published amount</span>
+              <span class="src none">none</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag">Doctor</span>
+              <span class="small muted" style="flex:1">Named lead doctor and qualifications</span>
+              <span class="src none">not checked</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag">Opening hours</span>
+              <span class="small muted" style="flex:1">Weekday, Saturday and closure days</span>
+              <span class="src none">not checked</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag">Language</span>
+              <span class="small muted" style="flex:1">English consultation confirmed by phone</span>
+              <span class="src none">not checked</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag">Contact channel</span>
+              <span class="small muted" style="flex:1">A working channel we can pass enquiries to</span>
+              <span class="src none">not checked</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="req-box">
+          <div class="rb-t">Does this clinic have a website we missed?</div>
+          <p>If it publishes prices and we did not find them, tell us the address and we will re-check it. A price that is published but unreadable is a gap on our side, not on the clinic&rsquo;s.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:12px" href="#">Suggest a source</a>
+        </div>
+
+        <div class="panel">
+          <h3>Clinics in Sincheon that do publish prices</h3>
+          <p class="p-sub">2 of the 40 Sincheon clinics in the registry publish a price we can read.</p>
+                      <a class="row-between" href="clinic-detail.html" style="padding:11px 0;border-bottom:1px solid var(--line-2)">
+              <span><b style="font-size:14.5px">베스탑비뇨기과의원</b><span class="small muted" style="display:block">서울특별시 송파구 올림픽로 269, 2층 221호</span></span>
+              <span class="src own"><span class="dotmark"></span>4 treatments</span>
+            </a>
+            <a class="row-between" href="clinic-detail.html" style="padding:11px 0;border-bottom:1px solid var(--line-2)">
+              <span><b style="font-size:14.5px">프리샤산부인과의원</b><span class="small muted" style="display:block">서울특별시 송파구 송파대로 562, 4층</span></span>
+              <span class="src own"><span class="dotmark"></span>1 treatments</span>
+            </a>
+        </div>
+      </main>
+
+      <aside>
+        <div class="leadbox" id="consult">
+          <h3>Ask about this area</h3>
+          <p class="lb-sub">Sincheon skin clinics. Goes to clinics in the neighborhood that publish prices.</p>
+          <div class="field">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" placeholder="Jane Cooper">
+          </div>
+          <div class="field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" placeholder="jane@example.com">
+          </div>
+          <div class="field">
+            <label>Phone (WhatsApp) <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 202 555 0142">
+            <div class="hint">Include the country code.</div>
+          </div>
+          <div class="field">
+            <label>Country <span class="req">*</span></label>
+            <select><option>United States</option><option>France</option><option>Singapore</option><option>Australia</option></select>
+          </div>
+          <div class="field">
+            <label>What you are looking at <span class="req">*</span></label>
+            <select>
+              <option>Not sure / I need advice</option>
+              <option>Botox</option>
+              <option>Filler</option>
+              <option>Rejuran</option>
+              <option>Laser toning</option>
+              <option>Ultherapy</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Message <span class="req">*</span></label>
+            <textarea placeholder="If it is about a specific clinic, name it here."></textarea>
+          </div>
+          <button class="btn btn-accent btn-block btn-lg">Send enquiry</button>
+          <p class="lb-foot">Enquiries go to clinics in Sincheon that publish prices. We never pass an enquiry to a clinic we have not confirmed we can reach. See the <a href="#">privacy notice</a>.</p>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Why this page has no price</h3>
+          <p class="p-sub" style="margin-bottom:12px">Across the three districts:</p>
+          <div class="funnel" style="margin-top:-4px">
+            <div class="funnel-step">
+              <div class="fs-n">1</div>
+              <div><div class="fs-t">Registry records</div><div class="fs-d">Skin and plastic clinics in Gangnam, Seocho and Songpa</div></div>
+              <div class="fs-v num">2,387</div>
+            </div>
+            <div class="funnel-step drop">
+              <div class="fs-n">2</div>
+              <div><div class="fs-t">Have a website on file</div><div class="fs-d">Found in the registry dataset or by search</div></div>
+              <div class="fs-v num">609</div>
+            </div>
+            <div class="funnel-step drop">
+              <div class="fs-n">3</div>
+              <div><div class="fs-t">Site reachable</div><div class="fs-d">Responded when we fetched it</div></div>
+              <div class="fs-v num">467</div>
+            </div>
+            <div class="funnel-step last">
+              <div class="fs-n">4</div>
+              <div><div class="fs-t">Publish a readable price</div><div class="fs-d">A treatment name and an amount</div></div>
+              <div class="fs-v num">46</div>
+            </div>
+          </div>
+          <a class="btn btn-ghost btn-sm btn-block" style="margin-top:16px" href="coverage.html">Full coverage story</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>

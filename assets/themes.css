@@ -1,0 +1,278 @@
+/* ==========================================================================
+   SeoulClinicIndex — Palette variants (시안 v2 리서치)
+   Theme is switched by <html data-theme="...">. base.css holds the confirmed
+   default ("navy") palette; this file holds the alternatives.
+   All of them were built to the same structure so screens can be compared
+   one-for-one: deep brand plane for chrome, one warm accent for calls to
+   action, warm paper ground, no green.
+   ========================================================================== */
+
+/* ---------- A. Teal — 초기안 (거부됨) ---------- */
+[data-theme="teal"]{
+  --ink:#132029;
+  --ink-2:#3B4A54;
+  --muted:#6E7C86;
+  --faint:#9AA6AE;
+
+  --brand:#0E6B70;
+  --brand-700:#0A5357;
+  --brand-900:#073B3E;
+  --brand-050:#E9F3F3;
+  --brand-100:#D3E8E8;
+
+  --accent:#C2541C;
+  --accent-700:#A64716;
+  --accent-050:#FBEDE5;
+  --on-accent:#FFFFFF;
+
+  --canvas:#F6F5F1;
+  --surface:#FFFFFF;
+  --line:#E3E0D9;
+  --line-2:#EDEBE5;
+
+  --field-bg:#FAFAF7;
+  --req-bg:#FBFBF8;
+  --line-strong:#D5D1C8;
+  --sand-bg:#F1EEE6;
+  --sand-ink:#7E6534;
+  --warm-bg:#FBF2EA;
+  --warm-line:#EFDCCE;
+  --warm-ink:#8A4B2F;
+  --warm-ink-2:#713D26;
+  --brand-glow:#E4F0EF;
+  --brand-glow-2:#F0F6F5;
+  --brand-bar-alt:#7FAEB0;
+
+  --on-deep:#C4DCDC;
+  --on-deep-link:#DDEEEE;
+  --on-deep-pill:#CFE7E7;
+  --on-deep-body:#B3CCCD;
+  --on-deep-link2:#C2D9D9;
+  --on-deep-mute:#9BB8B9;
+  --on-deep-faint:#7FA0A1;
+
+  --map-bg:#ECEDEA;
+  --map-grid:#DCDDD8;
+  --map-road:#C9CAC4;
+  --map-fill:#DFE0DA;
+  --map-label:#8A8C85;
+
+  --shadow-c:19,32,41;
+  --focus-ring:rgba(14,107,112,.11);
+}
+
+/* ---------- B. Crimson & Gold — 강렬 · 프리미엄 ---------- */
+[data-theme="crimson"]{
+  --ink:#1C1618;
+  --ink-2:#46383B;
+  --muted:#7C6B6E;
+  --faint:#A7979A;
+
+  --brand:#8E1F32;
+  --brand-700:#701828;
+  --brand-900:#4E0F1D;
+  --brand-050:#FBEDEF;
+  --brand-100:#F3D5DA;
+
+  --accent:#B08637;
+  --accent-700:#7E5E21;
+  --accent-050:#F8F1E3;
+  --on-accent:#1A1714;
+
+  --canvas:#F7F4F1;
+  --surface:#FFFFFF;
+  --line:#E5DFDA;
+  --line-2:#EFEAE6;
+
+  --field-bg:#FCFAF8;
+  --req-bg:#FCFAF9;
+  --line-strong:#D9D1CA;
+  --sand-bg:#F3EEE5;
+  --sand-ink:#7B6435;
+  --warm-bg:#FBF2E9;
+  --warm-line:#EEDBC5;
+  --warm-ink:#7F5527;
+  --warm-ink-2:#6B4620;
+  --brand-glow:#F7E6E9;
+  --brand-glow-2:#FAF1F2;
+  --brand-bar-alt:#C08090;
+
+  --on-deep:#EBC7CE;
+  --on-deep-link:#F6DDE2;
+  --on-deep-pill:#E0AEB8;
+  --on-deep-body:#DDB3BC;
+  --on-deep-link2:#E6C2CB;
+  --on-deep-mute:#B98A95;
+  --on-deep-faint:#9C6F7B;
+
+  --map-bg:#EEEBE8;
+  --map-grid:#DEDAD5;
+  --map-road:#CBC6C0;
+  --map-fill:#E1DDD8;
+  --map-label:#8E8880;
+
+  --shadow-c:28,22,24;
+  --focus-ring:rgba(142,31,50,.14);
+}
+
+/* ---------- C. Slate & Coral — 현대적 · 차분 ---------- */
+[data-theme="slate"]{
+  --ink:#171A1D;
+  --ink-2:#3A4147;
+  --muted:#6F7780;
+  --faint:#9BA3AC;
+
+  --brand:#2E4A63;
+  --brand-700:#233A4F;
+  --brand-900:#182838;
+  --brand-050:#EBF0F5;
+  --brand-100:#D5E0EA;
+
+  --accent:#D2603F;
+  --accent-700:#AE4E31;
+  --accent-050:#FCEDE7;
+  --on-accent:#171A1D;
+
+  --canvas:#F4F4F2;
+  --surface:#FFFFFF;
+  --line:#E1E0DB;
+  --line-2:#ECEBE6;
+
+  --field-bg:#FAFAF8;
+  --req-bg:#FBFBF9;
+  --line-strong:#D4D2CB;
+  --sand-bg:#F1EFE8;
+  --sand-ink:#7C6B3E;
+  --warm-bg:#FBF0E9;
+  --warm-line:#EFDBCE;
+  --warm-ink:#8A4B2F;
+  --warm-ink-2:#713D26;
+  --brand-glow:#E6EDF3;
+  --brand-glow-2:#F0F3F7;
+  --brand-bar-alt:#7E9AAF;
+
+  --on-deep:#C6D4E0;
+  --on-deep-link:#E1EBF3;
+  --on-deep-pill:#D2DEE9;
+  --on-deep-body:#B3C4D3;
+  --on-deep-link2:#C0D0DE;
+  --on-deep-mute:#9BAFBF;
+  --on-deep-faint:#7E93A5;
+
+  --map-bg:#EAEBE9;
+  --map-grid:#DBDBD7;
+  --map-road:#C8C7C1;
+  --map-fill:#DFDEDA;
+  --map-label:#8A8A84;
+
+  --shadow-c:23,26,29;
+  --focus-ring:rgba(46,74,99,.14);
+}
+
+/* ---------- D. Aubergine & Sand — 편집형 · 럭셔리 ---------- */
+[data-theme="aubergine"]{
+  --ink:#1C1720;
+  --ink-2:#42394B;
+  --muted:#776D83;
+  --faint:#A299AC;
+
+  --brand:#4A2F52;
+  --brand-700:#39243F;
+  --brand-900:#26162A;
+  --brand-050:#F4EDF6;
+  --brand-100:#E7DAEB;
+
+  --accent:#C08A3E;
+  --accent-700:#8A5F26;
+  --accent-050:#FAF2E5;
+  --on-accent:#1C1720;
+
+  --canvas:#F6F3F1;
+  --surface:#FFFFFF;
+  --line:#E4DFDD;
+  --line-2:#EEEAE8;
+
+  --field-bg:#FBF9F8;
+  --req-bg:#FBFAF9;
+  --line-strong:#D8D1CF;
+  --sand-bg:#F2EDE4;
+  --sand-ink:#806740;
+  --warm-bg:#FBF2E8;
+  --warm-line:#EEDDC8;
+  --warm-ink:#805528;
+  --warm-ink-2:#6B4420;
+  --brand-glow:#F1E9F3;
+  --brand-glow-2:#F7F2F8;
+  --brand-bar-alt:#A080A8;
+
+  --on-deep:#D6C6DA;
+  --on-deep-link:#EDDFEF;
+  --on-deep-pill:#C9B2CE;
+  --on-deep-body:#C5B4C9;
+  --on-deep-link2:#D2C0D6;
+  --on-deep-mute:#A895AE;
+  --on-deep-faint:#8A7691;
+
+  --map-bg:#ECE9E9;
+  --map-grid:#DCD8D8;
+  --map-road:#C9C4C4;
+  --map-fill:#DFDADA;
+  --map-label:#8B8585;
+
+  --shadow-c:28,23,32;
+  --focus-ring:rgba(74,47,82,.14);
+}
+
+/* ---------- E. Ink & Gold — 프리미엄 클리닉 톤 ---------- */
+[data-theme="ink"]{
+  --ink:#191C22;
+  --ink-2:#3E434C;
+  --muted:#6E747F;
+  --faint:#9AA0AA;
+
+  --brand:#1A1F2E;
+  --brand-700:#141821;
+  --brand-900:#0E1119;
+  --brand-050:#EDEFF3;
+  --brand-100:#DCE1EA;
+
+  --accent:#C9A962;
+  --accent-700:#7E6129;
+  --accent-050:#F6F0E0;
+  --on-accent:#1A1714;
+
+  --canvas:#F2EEE6;
+  --surface:#FFFFFF;
+  --line:#E3DDD2;
+  --line-2:#EFEBE3;
+
+  --field-bg:#FAF8F4;
+  --req-bg:#FBFAF7;
+  --line-strong:#D7D0C3;
+  --sand-bg:#F1ECDF;
+  --sand-ink:#7E6534;
+  --warm-bg:#FAF2E6;
+  --warm-line:#EDDCC4;
+  --warm-ink:#855A24;
+  --warm-ink-2:#6D491E;
+  --brand-glow:#E9EAEE;
+  --brand-glow-2:#F3F3F5;
+  --brand-bar-alt:#7C8391;
+
+  --on-deep:#C9CDD6;
+  --on-deep-link:#E4E7EC;
+  --on-deep-pill:#CFD3DC;
+  --on-deep-body:#B6BBC5;
+  --on-deep-link2:#C4C9D2;
+  --on-deep-mute:#98A0AC;
+  --on-deep-faint:#7E8794;
+
+  --map-bg:#EDEBE5;
+  --map-grid:#DCDAD2;
+  --map-road:#C8C4BA;
+  --map-fill:#DEDCD4;
+  --map-label:#8B877E;
+
+  --shadow-c:24,26,32;
+  --focus-ring:rgba(26,31,46,.14);
+}

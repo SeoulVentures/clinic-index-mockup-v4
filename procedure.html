@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Botox / Coretox prices — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html">02 Clinic list</a>
+  <a href="clinic-detail.html">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">04 Registry record (no price)</a>
+  <a href="neighborhood.html">05 Neighborhood guide</a>
+  <a href="procedure.html" class="on">06 Procedure page</a>
+  <a href="coverage.html">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="nb-hero">
+  <div class="wrap">
+    <nav class="crumb" style="padding-top:0"><a href="index.html">Home</a> / <a href="#">Treatments</a> / <span>Botox / Coretox</span></nav>
+    <h1 style="margin-top:18px">Botox prices in Seoul</h1>
+    <p class="nb-sub">Botox and Coretox prices published by skin and plastic clinics in Gangnam, Seocho and Songpa. Every figure below is the clinic&rsquo;s own published amount, read from its price page on 24 October 2026 &mdash; not an estimate and not an average of other clinics.</p>
+    <div class="nb-facts">
+      <div class="nb-fact"><div class="nf-v num">₩15,000</div><div class="nf-k">Lowest published</div></div>
+      <div class="nb-fact"><div class="nf-v num">₩90,000</div><div class="nf-k">Median published</div></div>
+      <div class="nb-fact"><div class="nf-v num">₩2,190,000</div><div class="nf-k">Highest published</div></div>
+      <div class="nb-fact"><div class="nf-v num">24</div><div class="nf-k">Clinics publishing it</div></div>
+      <div class="nb-fact"><div class="nf-v num">177</div><div class="nf-k">Price lines read</div></div>
+    </div>
+    <div class="nb-mix">
+      <span class="mix-pill">Middle half of clinics publish <b>₩45,375 &ndash; ₩145,000</b></span>
+      <span class="mix-pill">Read on <b>24 October 2026</b></span>
+      <span class="mix-pill">Re-read <b>weekly</b></span>
+    </div>
+  </div>
+</div>
+
+<section class="tight" style="padding-top:32px">
+  <div class="wrap">
+    <div class="detail-grid">
+      <main>
+        <div class="panel" style="margin-bottom:16px">
+          <h3>How to read these numbers</h3>
+          <p class="p-sub">Three things change what a Botox figure means, and we do not hide any of them.</p>
+          <div class="stack-sm">
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag brand">Unit</span>
+              <span class="small muted" style="flex:1">Clinics price per unit (U), per area, or per package. ₩30,000 for one area and ₩30,000 for a course are not the same thing, so we show the clinic&rsquo;s own wording on the detail page rather than normalising it.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag brand">Area</span>
+              <span class="small muted" style="flex:1">Wrinkle area, jawline, calf, underarm and full face are priced separately, and a full-face line is usually cheaper per unit than a single area.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="tag brand">Promotion</span>
+              <span class="small muted" style="flex:1">A clinic that labels a line as a first-visit or event price publishes a lower number. We keep those but mark them, and we exclude them when we take the middle figure for a clinic.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Where the published figures fall</h3>
+          <p class="p-sub">Each clinic is counted once, at its lowest published Botox figure.</p>
+          <table class="metric-table">
+            <thead><tr><th>Published figure</th><th>Clinics</th><th>Share</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="mt-n num">₩0 &ndash; ₩50,000</td>
+                <td class="mt-n num">11</td>
+                <td class="mt-bar"><i style="width:100%"></i></td>
+                <td class="pmeta">46%</td>
+              </tr>
+              <tr>
+                <td class="mt-n num">₩50,000 &ndash; ₩100,000</td>
+                <td class="mt-n num">6</td>
+                <td class="mt-bar"><i style="width:55%"></i></td>
+                <td class="pmeta">25%</td>
+              </tr>
+              <tr>
+                <td class="mt-n num">₩100,000 &ndash; ₩200,000</td>
+                <td class="mt-n num">5</td>
+                <td class="mt-bar"><i style="width:45%"></i></td>
+                <td class="pmeta">21%</td>
+              </tr>
+              <tr>
+                <td class="mt-n num">₩200,000 &ndash; ₩400,000</td>
+                <td class="mt-n num">1</td>
+                <td class="mt-bar"><i style="width:9%"></i></td>
+                <td class="pmeta">4%</td>
+              </tr>
+              <tr>
+                <td class="mt-n num">₩400,000 &ndash; no upper bound</td>
+                <td class="mt-n num">1</td>
+                <td class="mt-bar"><i style="width:9%"></i></td>
+                <td class="pmeta">4%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small muted" style="margin-top:14px">The spread is wide because the units are not the same. Read the unit before comparing two figures.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Price by neighborhood</h3>
+          <p class="p-sub">Only neighborhoods where at least one clinic publishes a Botox price appear here.</p>
+          <table class="proc-table">
+            <thead><tr><th>Neighborhood</th><th>Clinics</th><th class="r">Published range</th><th class="r">Median</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Seocho</a></td>
+                <td class="pmeta">5</td>
+                <td class="pprice num">₩19,000 &ndash; ₩500,000</td>
+                <td class="pmeta">₩100,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Nonhyeon</a></td>
+                <td class="pmeta">5</td>
+                <td class="pprice num">₩30,000 &ndash; ₩600,000</td>
+                <td class="pmeta">₩50,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Yeoksam</a></td>
+                <td class="pmeta">4</td>
+                <td class="pprice num">₩15,000 &ndash; ₩2,190,000</td>
+                <td class="pmeta">₩53,500</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Cheongdam</a></td>
+                <td class="pmeta">3</td>
+                <td class="pprice num">₩20,000 &ndash; ₩800,000</td>
+                <td class="pmeta">₩50,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Sinsa</a></td>
+                <td class="pmeta">3</td>
+                <td class="pprice num">₩19,000 &ndash; ₩390,000</td>
+                <td class="pmeta">₩35,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Banpo</a></td>
+                <td class="pmeta">1</td>
+                <td class="pprice num">₩25,000 &ndash; ₩25,000</td>
+                <td class="pmeta">₩25,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Samsung</a></td>
+                <td class="pmeta">1</td>
+                <td class="pprice num">₩100,000 &ndash; ₩150,000</td>
+                <td class="pmeta">₩100,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Jamsil</a></td>
+                <td class="pmeta">1</td>
+                <td class="pprice num">₩250,000 &ndash; ₩250,000</td>
+                <td class="pmeta">₩250,000</td>
+              </tr>
+              <tr>
+                <td><a href="neighborhood.html" style="color:var(--brand);font-weight:600">Seokchon</a></td>
+                <td class="pmeta">1</td>
+                <td class="pprice num">₩30,000 &ndash; ₩400,000</td>
+                <td class="pmeta">₩30,000</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small muted" style="margin-top:14px">Across the three districts there are 2,387 skin and plastic clinics in the registry. 46 of them publish a price we can read at all, and 24 publish a Botox price. The rest are not listed because we have nothing to show for them.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Clinics publishing Botox / Coretox</h3>
+          <p class="p-sub">Sorted by the lowest figure each clinic publishes, lowest first.</p>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>강남유앤아이의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Yeoksam &middot; Gangnam &middot; 50 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩15,000</b></span>
+                <span>Highest published <b class="num">₩1,809,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩15,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>강남 리쥬엘의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seocho &middot; Seocho &middot; 4 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩19,000</b></span>
+                <span>Highest published <b class="num">₩50,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩19,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>플라덴성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Sinsa &middot; Gangnam &middot; 42 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩19,000</b></span>
+                <span>Highest published <b class="num">₩390,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩19,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>제이셀성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Cheongdam &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩20,000</b></span>
+                <span>Highest published <b class="num">₩500,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩20,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>영영영의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Banpo &middot; Seocho &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩25,000</b></span>
+                <span>Highest published <b class="num">₩25,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩25,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>유에이치셀의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seocho &middot; Seocho &middot; 20 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩30,000</b></span>
+                <span>Highest published <b class="num">₩360,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩30,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>클리프의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Yeoksam &middot; Gangnam &middot; 9 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩30,000</b></span>
+                <span>Highest published <b class="num">₩2,190,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩30,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>루피엘의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Nonhyeon &middot; Gangnam &middot; 14 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩30,000</b></span>
+                <span>Highest published <b class="num">₩600,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩30,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>연세에이앤비피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seokchon &middot; Songpa &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩30,000</b></span>
+                <span>Highest published <b class="num">₩400,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩30,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>밸런스랩성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Sinsa &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩35,000</b></span>
+                <span>Highest published <b class="num">₩35,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩35,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>바바성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Nonhyeon &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩45,000</b></span>
+                <span>Highest published <b class="num">₩75,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩45,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>모리브의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Nonhyeon &middot; Gangnam &middot; 4 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩50,000</b></span>
+                <span>Highest published <b class="num">₩200,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩50,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>타겟성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Nonhyeon &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩50,000</b></span>
+                <span>Highest published <b class="num">₩50,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩50,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>루아베피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Cheongdam &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩50,000</b></span>
+                <span>Highest published <b class="num">₩50,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩50,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>탱글성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Sinsa &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩60,000</b></span>
+                <span>Highest published <b class="num">₩60,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩60,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>유레카피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Yeoksam &middot; Gangnam &middot; 8 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩77,000</b></span>
+                <span>Highest published <b class="num">₩198,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩77,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>르모아의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Yeoksam &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩80,000</b></span>
+                <span>Highest published <b class="num">₩80,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩80,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>별성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seocho &middot; Seocho &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩100,000</b></span>
+                <span>Highest published <b class="num">₩200,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩100,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>와이케이(YK)박윤기피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seocho &middot; Seocho &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩100,000</b></span>
+                <span>Highest published <b class="num">₩150,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩100,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>아우어성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Nonhyeon &middot; Gangnam &middot; 5 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩100,000</b></span>
+                <span>Highest published <b class="num">₩250,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩100,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>에스씨301의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Samsung &middot; Gangnam &middot; 2 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩100,000</b></span>
+                <span>Highest published <b class="num">₩150,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩100,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>메종드엠의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Seocho &middot; Seocho &middot; 6 published lines</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩150,000</b></span>
+                <span>Highest published <b class="num">₩500,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩150,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>서울삼성여성의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Jamsil &middot; Songpa &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩250,000</b></span>
+                <span>Highest published <b class="num">₩250,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩250,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <article class="clinic-row" style="box-shadow:none;margin-bottom:12px">
+            <div class="cr-main">
+              <h3>미인피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+              <p class="cr-addr">Cheongdam &middot; Gangnam &middot; 1 published line</p>
+              <div class="cr-foot">
+                <span>Lowest published <b class="num">₩800,000</b></span>
+                <span>Highest published <b class="num">₩800,000</b></span>
+                <span>Read <b>24 October 2026</b></span>
+              </div>
+            </div>
+            <div class="cr-right">
+              <div class="cr-price num">₩800,000<small class="pr-note">lowest published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+              <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            </div>
+          </article>
+          <div class="row-between" style="margin-top:16px">
+            <span class="small muted">Showing all 24 clinics &middot; read on 24 October 2026</span>
+            <a class="btn btn-ghost btn-sm" href="clinics.html">Open the full list</a>
+          </div>
+        </div>
+
+        <div class="limits">
+          <h3>What we cannot tell you about Botox prices</h3>
+          <ul>
+            <li>Which clinic will give the best result. We have not read a review and we do not rank quality.</li>
+            <li>What the price will be for you. The unit, the area and the amount are decided at consultation.</li>
+            <li>Whether a clinic&rsquo;s lowest figure is its normal price or a promotion. We mark the ones the clinic itself labels as a promotion; we cannot catch an unlabelled one.</li>
+            <li>What the price was before or after 24 October 2026. We read it once and re-read weekly, so anything the clinic changed between reads is not on the page.</li>
+          </ul>
+        </div>
+      </main>
+
+      <aside>
+        <div class="leadbox" id="consult">
+          <h3>Get a Botox quote</h3>
+          <p class="lb-sub">Tell us your dates and we will match you with a clinic that publishes prices and pass your message on.</p>
+          <div class="field">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" placeholder="Jane Cooper">
+          </div>
+          <div class="field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" placeholder="jane@example.com">
+          </div>
+          <div class="field">
+            <label>Phone (WhatsApp) <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 202 555 0142">
+          </div>
+          <div class="field">
+            <label>Country <span class="req">*</span></label>
+            <select><option>United States</option><option>France</option><option>Singapore</option><option>Australia</option></select>
+          </div>
+          <div class="field">
+            <label>Neighborhood <span class="req">*</span></label>
+            <select><option>Sinsa</option><option>Seocho</option><option>Yeoksam</option><option>Nonhyeon</option><option>Cheongdam</option><option>Banpo</option><option>Sincheon</option><option>Jamwon</option></select>
+          </div>
+          <div class="field">
+            <label>Preferred date <span class="req">*</span></label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label>Message <span class="req">*</span></label>
+            <textarea placeholder="Which area you are treating, and whether you want a single session or a course."></textarea>
+          </div>
+          <button class="btn btn-accent btn-block btn-lg">Send enquiry</button>
+          <p class="lb-foot">Your details go to the matched clinic and to our operations inbox. See the <a href="#">privacy notice</a>.</p>
+          <div class="lb-alt"><span>Want to compare first?</span><a class="btn btn-ghost btn-sm" href="clinics.html">See prices</a></div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Other treatments we have priced</h3>
+          <div class="pill-list" style="margin-top:12px">
+            <a class="pill" href="procedure.html">Filler &middot; 25</a><a class="pill" href="procedure.html">Lifting &middot; 20</a><a class="pill" href="procedure.html">Rejuran &middot; 13</a><a class="pill" href="procedure.html">Fat reduction &middot; 11</a><a class="pill" href="procedure.html">Laser toning &middot; 8</a><a class="pill" href="procedure.html">Thermage &middot; 9</a><a class="pill" href="procedure.html">Ultherapy &middot; 10</a><a class="pill" href="procedure.html">Juvelook &middot; 11</a><a class="pill" href="procedure.html">Skin booster &middot; 9</a><a class="pill" href="procedure.html">Body contouring &middot; 9</a><a class="pill" href="procedure.html">Hair transplant &middot; 5</a><a class="pill" href="procedure.html">Potenza &middot; 4</a><a class="pill" href="procedure.html">Pico laser &middot; 2</a><a class="pill" href="procedure.html">IPL &middot; 1</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>

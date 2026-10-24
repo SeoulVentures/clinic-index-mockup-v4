@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>클리프의원 — published prices — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html">02 Clinic list</a>
+  <a href="clinic-detail.html" class="on">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">04 Registry record (no price)</a>
+  <a href="neighborhood.html">05 Neighborhood guide</a>
+  <a href="procedure.html">06 Procedure page</a>
+  <a href="coverage.html">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">Home</a> / <a href="clinics.html">Clinics</a> /
+    <a href="neighborhood.html">Yeoksam</a> /
+    <span>클리프의원</span>
+  </nav>
+</div>
+
+<section class="tight" style="padding-top:18px">
+  <div class="wrap">
+    <div class="detail-grid">
+      <main>
+        <div class="d-head">
+          <div class="d-badges" style="margin-bottom:12px">
+            <span class="src own"><span class="dotmark"></span>prices published</span>
+            <span class="tag brand">Gangnam</span>
+            <span class="tag">Yeoksam</span>
+            <span class="tag">8 treatments &middot; 52 price lines</span>
+          </div>
+          <h1>클리프의원</h1>
+          <p class="d-addr">서울특별시 강남구 강남대로94길 18, 12층 &middot; Tel <b>02-6205-7878</b>
+            &middot; <a href="https://cliffclinic.com/price/" style="color:var(--brand);font-weight:600">the clinic&rsquo;s own price page</a></p>
+          <div class="row" style="gap:10px;flex-wrap:wrap"><span class="tag">Botox / Coretox</span><span class="tag">Filler</span><span class="tag">Rejuran</span><span class="tag">Laser toning</span><span class="tag">Ultherapy</span><span class="tag">Juvelook</span><span class="tag">Body contouring</span><span class="tag">Potenza</span></div>
+        </div>
+
+        <div class="notice">
+          <div class="n-ic">i</div>
+          <div style="flex:1">
+            <b>Everything below is the clinic&rsquo;s own figure, read on 24 October 2026</b>
+            <p>We did not estimate, average or convert any of these numbers. Where a line has a unit &mdash; cc, shots, units &mdash; that unit is the clinic&rsquo;s own wording and it changes what the number means.</p>
+            <div class="src-legend" style="margin-top:10px">
+              <span><i class="src own" style="font-size:10.5px"><span class="dotmark"></span>own price page</i> read from the clinic&rsquo;s site</span>
+              <span><i class="src portal" style="font-size:10.5px">promotion</i> the clinic labels this line as a promotion</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Registry record</h3>
+          <p class="p-sub">Taken from the national medical facility registry, not from the clinic&rsquo;s marketing copy.</p>
+          <div class="info-grid">
+            <div class="info-row"><div class="il">Name</div><div class="iv">클리프의원</div></div>
+            <div class="info-row"><div class="il">District</div><div class="iv">강남구 &middot; Yeoksam</div></div>
+            <div class="info-row"><div class="il">Address</div><div class="iv">서울특별시 강남구 강남대로94길 18, 12층</div></div>
+            <div class="info-row"><div class="il">Telephone</div><div class="iv">02-6205-7878</div></div>
+            <div class="info-row"><div class="il">Registered</div><div class="iv">Opened 2026</div></div>
+            <div class="info-row"><div class="il">Operating type</div><div class="iv">Sole proprietor</div></div>
+            <div class="info-row"><div class="il">Parking</div><div class="iv">Own parking &middot; 24 spaces</div></div>
+            <div class="info-row"><div class="il">Saturday hours</div><div class="iv">Sat 10:00–18:00</div></div>
+            <div class="info-row"><div class="il">Price source</div><div class="iv">https://cliffclinic.com/price/</div></div>
+          </div>
+          <p class="small muted" style="margin-top:14px">The registry does not record who practices here or whether English consultation is possible. We do not print those fields on this page because we have not checked them. Parking and Saturday hours appear only when the registry carries them &mdash; across the 2,387-clinic pool it has parking for 225 and Saturday hours for 248.</p>
+        </div>
+
+        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Botox / Coretox</h3>
+              <p class="p-sub" style="margin-bottom:0">9 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩30,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">주름 with CALM protocol™</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">30,000</span> <span class="muted small">&ndash; ₩90,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">턱 with CALM protocol™ 50U</div>
+                <div class="pt-sub">50U</div>
+              </td>
+              <td class="pt-val"><span class="num">50,000</span> <span class="muted small">&ndash; ₩200,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">스킨 with CALM protocol™ 얼굴 전체</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">99,000</span> <span class="muted small">&ndash; ₩299,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">침샘 with CALM protocol™ 귀밑 · 턱밑 각</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">100,000</span> <span class="muted small">&ndash; ₩250,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">승모근·종아리 with CALM protocol™ 100U</div>
+                <div class="pt-sub">100U</div>
+              </td>
+              <td class="pt-val"><span class="num">120,000</span> <span class="muted small">&ndash; ₩450,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">가로 목주름 벨로테로 소프트 2cc + 스킨 (코어톡스)</div>
+                <div class="pt-sub">2cc</div>
+              </td>
+              <td class="pt-val"><span class="num">550,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">세로 목주름 ① 소프웨이브 100샷 + 스킨 (코어톡스)</div>
+                <div class="pt-sub">100샷</div>
+              </td>
+              <td class="pt-val"><span class="num">1,100,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">혼합형 ① 소프웨이브 100샷 + 벨로테로 소프트 2cc + 스킨 (코어톡스)</div>
+                <div class="pt-sub">100샷</div>
+              </td>
+              <td class="pt-val"><span class="num">1,490,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">혼합형 ② 소프웨이브 150샷 + 래디어스 1시린지 + 스킨 (코어톡스)</div>
+                <div class="pt-sub">150샷</div>
+              </td>
+              <td class="pt-val"><span class="num">2,190,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Filler</h3>
+              <p class="p-sub" style="margin-bottom:0">1 published price line for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩150,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">히알라제 주사 용해 · 1회</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">150,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Rejuran</h3>
+              <p class="p-sub" style="margin-bottom:0">16 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩149,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">아이 1cc</div>
+                <div class="pt-sub">1cc</div>
+              </td>
+              <td class="pt-val"><span class="num">149,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">HB 1cc</div>
+                <div class="pt-sub">1cc</div>
+              </td>
+              <td class="pt-val"><span class="num">169,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">S 1cc</div>
+                <div class="pt-sub">1cc</div>
+              </td>
+              <td class="pt-val"><span class="num">190,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">힐러 2cc</div>
+                <div class="pt-sub">2cc</div>
+              </td>
+              <td class="pt-val"><span class="num">229,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">아이 2cc</div>
+                <div class="pt-sub">2cc</div>
+              </td>
+              <td class="pt-val"><span class="num">289,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">프리미엄 3cc</div>
+                <div class="pt-sub">3cc</div>
+              </td>
+              <td class="pt-val"><span class="num">299,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">클리프 프리미엄 오투 페이셜 하이풀디엠 소노테라피 + 프리미엄 아스트로돔 오투플러스 + 또는 ASCE 엑소좀 마스크팩</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">390,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">힐러 4cc</div>
+                <div class="pt-sub">4cc</div>
+              </td>
+              <td class="pt-val"><span class="num">439,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">프리미엄 6cc</div>
+                <div class="pt-sub">6cc</div>
+              </td>
+              <td class="pt-val"><span class="num">589,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">힐러 6cc</div>
+                <div class="pt-sub">6cc</div>
+              </td>
+              <td class="pt-val"><span class="num">649,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">HB 4cc</div>
+                <div class="pt-sub">4cc</div>
+              </td>
+              <td class="pt-val"><span class="num">649,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">힐러 8cc</div>
+                <div class="pt-sub">8cc</div>
+              </td>
+              <td class="pt-val"><span class="num">849,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">프리미엄 9cc</div>
+                <div class="pt-sub">9cc</div>
+              </td>
+              <td class="pt-val"><span class="num">879,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">HB 6cc</div>
+                <div class="pt-sub">6cc</div>
+              </td>
+              <td class="pt-val"><span class="num">949,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">프리미엄 12cc</div>
+                <div class="pt-sub">12cc</div>
+              </td>
+              <td class="pt-val"><span class="num">1,149,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">HB 8cc</div>
+                <div class="pt-sub">8cc</div>
+              </td>
+              <td class="pt-val"><span class="num">1,249,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Laser toning</h3>
+              <p class="p-sub" style="margin-bottom:0">2 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩129,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">레블라이트SI 1회</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">129,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">원데이 레블라이트SI 올인원 색소 1064nm (진피색소) + 532nm(표피색소 · 주근깨 · 흑자 1개)</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">400,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Ultherapy</h3>
+              <p class="p-sub" style="margin-bottom:0">8 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩500,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">피 프라임 100샷</div>
+                <div class="pt-sub">100샷</div>
+              </td>
+              <td class="pt-val"><span class="num">500,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">아이 200샷 · 눈가</div>
+                <div class="pt-sub">200샷</div>
+              </td>
+              <td class="pt-val"><span class="num">690,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">피 프라임 300샷</div>
+                <div class="pt-sub">300샷</div>
+              </td>
+              <td class="pt-val"><span class="num">1,090,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">피 프라임 400샷</div>
+                <div class="pt-sub">400샷</div>
+              </td>
+              <td class="pt-val"><span class="num">1,390,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">피 프라임 600샷</div>
+                <div class="pt-sub">600샷</div>
+              </td>
+              <td class="pt-val"><span class="num">2,090,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">저통증 울프웨이브 피 프라임 300샷 + 소프웨이브 200샷</div>
+                <div class="pt-sub">300샷</div>
+              </td>
+              <td class="pt-val"><span class="num">2,790,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">피 프라임 900샷</div>
+                <div class="pt-sub">900샷</div>
+              </td>
+              <td class="pt-val"><span class="num">3,090,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">프리미엄 피 프라임 400샷 + 세르프 600샷 + 래디어스 1시린지 + CALM booster 1회</div>
+                <div class="pt-sub">400샷</div>
+              </td>
+              <td class="pt-val"><span class="num">3,890,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Juvelook</h3>
+              <p class="p-sub" style="margin-bottom:0">6 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩299,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">스킨 반바이알</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">299,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">볼륨 반바이알</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">329,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">아이 반바이알 · 2cc</div>
+                <div class="pt-sub">2cc</div>
+              </td>
+              <td class="pt-val"><span class="num">349,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">스킨 1바이알</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">499,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">볼륨 1바이알</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">599,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">아이 1바이알</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">599,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Body contouring</h3>
+              <p class="p-sub" style="margin-bottom:0">6 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩180,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF · 20cc</div>
+                <div class="pt-sub">20cc</div>
+              </td>
+              <td class="pt-val"><span class="num">180,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF MAX · 20cc</div>
+                <div class="pt-sub">20cc</div>
+              </td>
+              <td class="pt-val"><span class="num">200,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF · 40cc</div>
+                <div class="pt-sub">40cc</div>
+              </td>
+              <td class="pt-val"><span class="num">320,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF MAX · 40cc</div>
+                <div class="pt-sub">40cc</div>
+              </td>
+              <td class="pt-val"><span class="num">380,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF · 60cc</div>
+                <div class="pt-sub">60cc</div>
+              </td>
+              <td class="pt-val"><span class="num">450,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">SLIM by CLIFF MAX · 60cc</div>
+                <div class="pt-sub">60cc</div>
+              </td>
+              <td class="pt-val"><span class="num">550,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>        <div class="panel">
+          <div class="row-between" style="align-items:flex-start;margin-bottom:14px">
+            <div>
+              <h3 style="margin-bottom:2px">Potenza</h3>
+              <p class="p-sub" style="margin-bottom:0">4 published price lines for this treatment</p>
+            </div>
+            <div style="text-align:right">
+              <div class="num" style="font-size:19px;font-weight:700">₩199,000</div>
+              <div class="small muted">lowest published</div>
+            </div>
+          </div>
+          <table class="price-table">
+            <thead><tr><th>Published line</th><th style="text-align:right">Price</th><th>Source</th><th>Read</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="pt-name">N팁 · 얼굴 전체</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">199,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">아그네스 · 얼굴 전체</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">199,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">펌핑팁 · 얼굴 전체</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">219,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="pt-name">깊은 흉터 · 복합 흉터 — 프리미엄 프락셀 또는 N팁 + 서브시전 + 리투오 1시린지 + 라라필 + 압출 + 크라이오 진정 + 홈케어</div>
+                
+              </td>
+              <td class="pt-val"><span class="num">900,000</span></td>
+              <td class="pt-src"><span class="src own"><span class="dotmark"></span>own price page</span></td>
+              <td class="pt-when">24 October 2026</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="limits">
+          <h3>What this page does not tell you</h3>
+          <p class="p-sub">Four things a price list cannot answer.</p>
+          <ul>
+            <li>Whether this is the right clinic for you. We do not rank quality and we have not read a single patient review.</li>
+            <li>What the final price will be. Lines with a unit &mdash; cc, shots, units &mdash; depend on the amount your doctor decides on.</li>
+            <li>Whether the price still holds. We read it once. It is re-read weekly, but a clinic can change its list between reads.</li>
+            <li>Who will treat you, when you can be seen, or whether the clinic will answer a message in English.</li>
+          </ul>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Where this clinic sits</h3>
+          <p class="p-sub">Yeoksam holds 307 skin and plastic clinics in the registry. 6 of them publish a price we can read, and 클리프의원 publishes 52 of them.</p>
+          <div class="row" style="gap:10px;flex-wrap:wrap">
+            <a class="btn btn-ghost btn-sm" href="neighborhood.html">Yeoksam guide</a>
+            <a class="btn btn-ghost btn-sm" href="procedure.html">Treatment pages</a>
+            <a class="btn btn-ghost btn-sm" href="clinics.html">All 46 priced clinics</a>
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="leadbox" id="consult">
+          <h3>Enquire about this clinic</h3>
+          <p class="lb-sub">Your message goes to 클리프의원. We confirm receipt within one business day.</p>
+          <div class="field">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" placeholder="Jane Cooper">
+          </div>
+          <div class="field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" placeholder="jane@example.com">
+          </div>
+          <div class="field">
+            <label>Phone (WhatsApp) <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 202 555 0142">
+            <div class="hint">Include the country code so we can reach you.</div>
+          </div>
+          <div class="field-2">
+            <div class="field"><label>Country <span class="req">*</span></label><select><option>United States</option><option>France</option><option>Singapore</option><option>Australia</option></select></div>
+            <div class="field"><label>Preferred contact</label><select><option>WhatsApp</option><option>Kakao</option><option>Email</option></select></div>
+          </div>
+          <div class="field">
+            <label>Treatment <span class="req">*</span></label>
+            <select>
+              <option>Botox / Coretox</option><option>Filler</option><option>Rejuran</option><option>Laser toning</option><option>Ultherapy</option><option>Juvelook</option><option>Body contouring</option><option>Potenza</option>
+              <option>Not sure / I need advice</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Message <span class="req">*</span></label>
+            <textarea placeholder="What you are hoping to treat, and when you plan to visit."></textarea>
+          </div>
+          <div class="field-2">
+            <div class="field"><label>Planned arrival</label><input type="date"></div>
+            <div class="field"><label>Planned departure</label><input type="date"></div>
+          </div>
+          <button class="btn btn-accent btn-block btn-lg">Send enquiry</button>
+          <p class="lb-foot">Your details are passed to the clinic to answer you. They are not sold or shared beyond this enquiry. See the <a href="#">privacy notice</a>.</p>
+          <div class="lb-alt">
+            <span>Prefer to talk now?</span>
+            <a class="btn btn-ghost btn-sm" href="tel:0262057878">02-6205-7878</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>

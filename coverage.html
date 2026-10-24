@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data coverage — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html">02 Clinic list</a>
+  <a href="clinic-detail.html">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">04 Registry record (no price)</a>
+  <a href="neighborhood.html">05 Neighborhood guide</a>
+  <a href="procedure.html">06 Procedure page</a>
+  <a href="coverage.html" class="on">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="cov-hero">
+  <div class="wrap">
+    <nav class="crumb" style="padding-top:0"><a href="index.html">Home</a> / <span>Data coverage</span></nav>
+    <h1 style="margin-top:18px">What we can tell you, and what we cannot</h1>
+    <p class="nb-sub">This page exists because a directory that hides its coverage is worse than no directory. Here is the whole funnel, measured on 24 October 2026, and the limits that follow from it.</p>
+    <div class="cov-facts">
+      <div class="cov-fact"><div class="nf-v num">2,387</div><div class="nf-k">Clinics in the registry</div></div>
+      <div class="cov-fact"><div class="nf-v num">46</div><div class="nf-k">Listed here</div></div>
+      <div class="cov-fact"><div class="nf-v num">1.9%</div><div class="nf-k">Of the candidate pool</div></div>
+      <div class="cov-fact"><div class="nf-v num">5,444</div><div class="nf-k">If we covered all of Seoul</div></div>
+      <div class="cov-fact"><div class="nf-v num">~685</div><div class="nf-k">That would give, at this rate</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight" style="padding-top:36px">
+  <div class="wrap">
+    <div class="detail-grid">
+      <main>
+        <div class="panel" style="margin-bottom:16px">
+          <h3>The funnel</h3>
+          <p class="p-sub">Measured on 24 October 2026. Every number here comes from a run we did, not an estimate.</p>
+        <div class="funnel">
+          <div class="funnel-step">
+            <div class="fs-n">1</div>
+            <div>
+              <div class="fs-t">Skin and plastic clinics in the registry</div>
+              <div class="fs-d">Administrative data published by the Ministry of the Interior and Safety. This is the candidate pool &mdash; every clinic we could possibly list.</div>
+            </div>
+            <div class="fs-v num">2,387<small>Gangnam, Seocho, Songpa</small></div>
+          </div>
+          <div class="funnel-step drop">
+            <div class="fs-n">2</div>
+            <div>
+              <div class="fs-t">Have a website on file</div>
+              <div class="fs-d">A homepage field in the registry dataset, or a match found by search. This step costs money; the rest does not.</div>
+            </div>
+            <div class="fs-v num">609<small>25.5% of the pool</small></div>
+          </div>
+          <div class="funnel-step drop">
+            <div class="fs-n">3</div>
+            <div>
+              <div class="fs-t">Site reachable</div>
+              <div class="fs-d">The site responded when we fetched it. 142 of the 609 sites on file were dead or refused the request.</div>
+            </div>
+            <div class="fs-v num">467<small>19.6% of the pool</small></div>
+          </div>
+          <div class="funnel-step drop">
+            <div class="fs-n">4</div>
+            <div>
+              <div class="fs-t">Publish a beauty treatment with an amount</div>
+              <div class="fs-d">A treatment name and a figure we could read as a per-treatment price.</div>
+            </div>
+            <div class="fs-v num">52<small>price pages found</small></div>
+          </div>
+          <div class="funnel-step last">
+            <div class="fs-n">5</div>
+            <div>
+              <div class="fs-t">Listed on this site</div>
+              <div class="fs-d">6 of the 52 were excluded: the only figures they published were packages, per-graft unit prices, or masked amounts we could not read as a treatment price.</div>
+            </div>
+            <div class="fs-v num">46<small>1.9% of the pool</small></div>
+          </div>
+        </div>
+          <p class="small muted" style="margin-top:18px">The single biggest drop is step 2: 1,778 of the 2,387 clinics have no website on file at all. That is a data availability fact, not something we can fix by crawling harder.</p>
+        </div>
+
+        <div class="panel">
+          <h3>How the data stays current</h3>
+          <p class="p-sub">Two different jobs on two different clocks. The expensive one runs less often.</p>
+        <table class="metric-table">
+          <thead><tr><th>Job</th><th>Target</th><th>Cycle</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Find a website</b><div class="pt-sub">For clinics that still have no URL on file</div></td>
+              <td class="mt-n">1,778 without a URL</td>
+              <td>Monthly, in slices</td>
+              <td>$17.78 &middot; 3,556 Brave requests</td>
+            </tr>
+            <tr>
+              <td><b>Re-read prices</b><div class="pt-sub">Every clinic we have a URL for</div></td>
+              <td class="mt-n">609 sites</td>
+              <td>Weekly</td>
+              <td>None &middot; 51 seconds</td>
+            </tr>
+            <tr>
+              <td><b>Re-find dead links</b><div class="pt-sub">For sites that stopped responding</div></td>
+              <td class="mt-n">142 dead URLs</td>
+              <td>Monthly</td>
+              <td>Covered by the first row</td>
+            </tr>
+          </tbody>
+        </table>
+          <p class="small muted" style="margin-top:14px">The price re-read takes 51 seconds for all 609 known sites &mdash; we measured it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+        </div>
+
+        <div class="panel">
+          <h3>How we look for the 1,778 clinics that have no website</h3>
+          <p class="p-sub">Rules only. No model reads a page and guesses.</p>
+          <div class="stack-sm" style="font-size:13.5px;color:var(--ink-2);line-height:1.7;margin-bottom:16px">
+            <div><b>1 &middot; Look the clinic up.</b> We ask a search API for the clinic by name, restricted to the district, with the registry&rsquo;s own coordinates as the centre point.</div>
+            <div><b>2 &middot; Check the address.</b> We take the registry&rsquo;s coordinates and the search result&rsquo;s coordinates and compare. If they are within 40&nbsp;metres, it is the same building.</div>
+            <div><b>3 &middot; Check the name or the telephone number.</b> One of the two has to match as well. Both filters have to pass before we accept a URL.</div>
+            <div><b>4 &middot; Read the site for prices.</b> Only once a URL is accepted do we open the site and look for a treatment with an amount.</div>
+            <div><b>5 &middot; Remember it.</b> An accepted URL is written to a registry file and never searched for again. A clinic that failed is put on a backoff &mdash; one month, then three, then six, then it stops.</div>
+          </div>
+          <div class="stack-sm">
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src own"><span class="dotmark"></span>measured</span>
+              <span class="small muted" style="flex:1">We ran the full pipeline on 36 clinics in two runs. 35 of the 36 produced a URL candidate, 16 passed the address and name checks, and 1 of those confirmed sites had a treatment price we could read. That last number is the honest one: finding the website does not mean the clinic publishes a price. The second run stopped after 6 clinics because the monthly search allowance ran out, so the sample is small.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src none">not published</span>
+              <span class="small muted" style="flex:1">Two requests per clinic, 3,556 requests for the 1,778, about 94 minutes on one machine. At the search plan&rsquo;s rate that is $17.78 for a full sweep &mdash; and it does not need to be repeated, because every answer is cached.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src portal">projection</span>
+              <span class="small muted" style="flex:1">Across the whole pool, 46 of 2,387 clinics publish a price we can read &mdash; 1.9%. Applied to the 1,778, that is roughly 34 more clinics with a readable price, for $17.78 of search. The sweep also produces a correct website for about 790 of them, which is worth having even where no price follows.</span>
+            </div>
+          </div>
+          <div class="notice warm" style="margin-top:16px">
+            <div class="n-ic" style="background:var(--accent)">!</div>
+            <div>
+              <b>The search quota is currently spent</b>
+              <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We used it, and the API is now refusing further calls until the month resets. A full sweep needs 3,556 requests, so it fits inside the free allowance only if it is spread over about 3.6 months of 1,000 requests each; otherwise it needs a paid top-up. We are not publishing clinics we have not actually reached &mdash; a quota wall is a reason to wait, not a reason to guess.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>The five filters, and how much of the registry fills them</h3>
+          <p class="p-sub">Every filter on the clinic list comes from the registry itself, so a figure we show is the clinic&rsquo;s own record rather than our estimate. Three of the five are close to complete. Two are not.</p>
+          <table class="metric-table">
+            <thead><tr><th>Filter</th><th>Registry field</th><th>Coverage in the 2,387-clinic pool</th><th>Of the 46 listed here</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><b>Year established</b></td>
+                <td class="mt-n">Opening date</td>
+                <td class="mt-n">2,380 of 2,387 &middot; 99.7%</td>
+                <td class="mt-n">46 of 46</td>
+              </tr>
+              <tr>
+                <td><b>Operating type</b></td>
+                <td class="mt-n">Establishment classification</td>
+                <td class="mt-n">2,367 of 2,387 &middot; 99.2%</td>
+                <td class="mt-n">45 of 46</td>
+              </tr>
+              <tr>
+                <td><b>Administrative neighborhood</b></td>
+                <td class="mt-n">Neighborhood</td>
+                <td class="mt-n">2,380 of 2,387 &middot; 99.7%</td>
+                <td class="mt-n">46 of 46</td>
+              </tr>
+              <tr>
+                <td><b>Parking</b></td>
+                <td class="mt-n">Parking spaces, cost bearer, notes</td>
+                <td class="mt-n">225 of 2,387 &middot; 9.4%</td>
+                <td class="mt-n">6 of 46</td>
+              </tr>
+              <tr>
+                <td><b>Saturday treatment</b></td>
+                <td class="mt-n">Saturday start and end times</td>
+                <td class="mt-n">248 of 2,387 &middot; 10.4%</td>
+                <td class="mt-n">7 of 46</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="notice warm" style="margin-top:16px">
+            <div class="n-ic" style="background:var(--accent)">!</div>
+            <div>
+              <b>Why parking and Saturday hours are thin</b>
+              <p>Only 284 of the 2,387 clinics have a detailed registry record at all &mdash; the file that carries parking spaces and Saturday times. The other 2,103 have a name, an address and an opening date, and nothing more. We checked the detailed-record API as well: of the 978 records it returns, every clinic that carries any of these fields is already inside that 284. It adds no coverage we did not have.</p>
+              <p>So the two thin filters are a gap in the source, not in our collection. We still offer them, and we show &ldquo;not in the registry&rdquo; as its own option rather than leaving you to wonder whether a missing value means no parking or no record.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>How we treat a clinic&rsquo;s site</h3>
+          <p class="p-sub">We audit the rules on every site before we collect from it.</p>
+          <table class="metric-table">
+            <thead><tr><th>Rule</th><th>What we found across 585 hosts</th><th>What we do</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><b>robots.txt</b></td>
+                <td class="mt-n">328 hosts publish one &middot; 257 return 404</td>
+                <td>We read it and follow it. 53 hosts disallow everything.</td>
+              </tr>
+              <tr>
+                <td><b>Disallow: /</b></td>
+                <td class="mt-n">53 hosts (9%)</td>
+                <td>We do not collect from these at all.</td>
+              </tr>
+              <tr>
+                <td><b>Crawl-delay</b></td>
+                <td class="mt-n">25 hosts specify one &middot; median 10s &middot; max 3,600s</td>
+                <td>We wait exactly as long as they ask. At 3,600s that is one visit a day.</td>
+              </tr>
+              <tr>
+                <td><b>Price paths</b></td>
+                <td class="mt-n">4 hosts disallow their price path</td>
+                <td>We skip the price page on those four.</td>
+              </tr>
+              <tr>
+                <td><b>Identification</b></td>
+                <td class="mt-n">All of our requests</td>
+                <td>We send our own user-agent with a contact URL, and we keep at least one second between visits to the same host.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h3>What a price on this site is</h3>
+          <p class="p-sub">The definition we hold ourselves to.</p>
+          <div class="stack-sm">
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src own"><span class="dotmark"></span>own page</span>
+              <span class="small muted" style="flex:1">The figure is on the clinic&rsquo;s own website, in the clinic&rsquo;s own wording. We do not estimate, convert, average or adjust it.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src portal">promotion</span>
+              <span class="small muted" style="flex:1">The clinic itself labels the line as a first-visit or event price. We keep it and mark it, and we leave it out when we take a clinic&rsquo;s middle figure.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src none">not published</span>
+              <span class="small muted" style="flex:1">The clinic is in the registry but publishes no amount we can read. It gets no price on this site, and no guess.</span>
+            </div>
+          </div>
+          <p class="small muted" style="margin-top:14px">Units are not normalised. A clinic that lists ₩50,000 per 100U and a clinic that lists ₩500,000 for a full face are both correct at what they publish &mdash; we show both and label the unit.</p>
+        </div>
+
+        <div class="limits">
+          <h3>What we cannot tell you</h3>
+          <p class="p-sub">The list is longer than the page. This is the honest version of it.</p>
+          <ul>
+            <li><b>Quality.</b> We have not read a single patient review. Nothing on this site ranks a clinic by how good it is.</li>
+            <li><b>Price for you.</b> The unit, the area and the amount are decided at consultation. A published figure is a starting point, not a quote.</li>
+            <li><b>Which clinic is good value.</b> We can tell you what a clinic charges. We cannot tell you whether the result will be worth it, and we do not score clinics.</li>
+            <li><b>Every clinic.</b> 2,341 of the 2,387 clinics in the three districts are not listed. They publish no price we can read. <a href="clinics.html">See what we do list →</a></li>
+            <li><b>Real-time prices.</b> We re-read weekly. Between reads a clinic can change its list, and we would not know until the next read.</li>
+            <li><b>Doctor, hours, language, reception.</b> The registry does not hold these. We do not print them for a clinic we have not verified, so for most clinics on this site they are blank.</li>
+            <li><b>Whether a price is the final one.</b> Prices may be quoted before VAT, and packages work out at a different effective rate. The clinic confirms at consultation.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Where this could go next</h3>
+          <p class="p-sub">Measured, not promised.</p>
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon-badge">◈</div>
+              <h4 style="margin-top:12px">All of Seoul</h4>
+              <p>5,444 skin and plastic clinics across the 25 districts. URL coverage there is 20.3%, close to the 25.5% we see in the three districts, so the same pipeline would give roughly 685 priced clinics.</p>
+            </div>
+            <div class="card">
+              <div class="icon-badge">↻</div>
+              <h4 style="margin-top:12px">A change alert</h4>
+              <p>Once prices are re-read weekly, we can flag a clinic whose published price moved and show the old figure next to the new one. That is a reading task, not a writing one.</p>
+            </div>
+            <div class="card">
+              <div class="icon-badge">◐</div>
+              <h4 style="margin-top:12px">Verification by phone</h4>
+              <p>The 1,778 clinics with no website are the hard part. A phone check per clinic would recover hours, doctors and languages &mdash; at a human cost we have not costed yet.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="panel">
+          <h3>Coverage at a glance</h3>
+          <p class="p-sub">Read on 24 October 2026</p>
+          <div class="funnel" style="margin-top:6px">
+            <div class="funnel-step">
+              <div class="fs-n">1</div>
+              <div><div class="fs-t">Registry</div></div>
+              <div class="fs-v num">2,387</div>
+            </div>
+            <div class="funnel-step drop">
+              <div class="fs-n">2</div>
+              <div><div class="fs-t">With a website</div></div>
+              <div class="fs-v num">609</div>
+            </div>
+            <div class="funnel-step drop">
+              <div class="fs-n">3</div>
+              <div><div class="fs-t">Reachable</div></div>
+              <div class="fs-v num">467</div>
+            </div>
+            <div class="funnel-step last">
+              <div class="fs-n">4</div>
+              <div><div class="fs-t">Listed here</div></div>
+              <div class="fs-v num">46</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Sources</h3>
+          <div class="stack-sm" style="font-size:13px;color:var(--ink-2);line-height:1.7">
+            <div><b>Clinic records</b><br><span class="small muted">Korean national medical facility standard data (Ministry of the Interior and Safety)</span></div>
+            <div><b>Prices</b><br><span class="small muted">Each clinic&rsquo;s own published price page, fetched 24 October 2026</span></div>
+            <div><b>Map positions</b><br><span class="small muted">Coordinates from the same registry dataset &mdash; not from a paid directory</span></div>
+            <div><b>Map tiles</b><br><span class="small muted">OpenStreetMap contributors</span></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Listing rule</h3>
+          <p class="p-sub">Payment for placement is not accepted, and a clinic cannot pay to be ranked higher. The list is sorted by published figure, which is a fact, not an opinion.</p>
+          <a class="btn btn-ghost btn-sm btn-block" style="margin-top:14px" href="clinics.html">See the 46 listed clinics</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>

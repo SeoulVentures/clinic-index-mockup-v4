@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinsa skin and plastic clinics — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+<link rel="stylesheet" href="assets/vendor/leaflet.css">
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html">02 Clinic list</a>
+  <a href="clinic-detail.html">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">04 Registry record (no price)</a>
+  <a href="neighborhood.html" class="on">05 Neighborhood guide</a>
+  <a href="procedure.html">06 Procedure page</a>
+  <a href="coverage.html">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="nb-hero">
+  <div class="wrap">
+    <nav class="crumb" style="padding-top:0"><a href="index.html">Home</a> / <a href="clinics.html">Clinics</a> / <span>Sinsa</span></nav>
+    <h1 style="margin-top:18px">Sinsa skin and plastic clinics</h1>
+    <p class="nb-sub">Sinsa is the largest cluster of skin and plastic clinics in the three districts &mdash; 486 of them in the registry. 13 of those publish a treatment price in a form we can read, and those are the ones on this page.</p>
+    <div class="nb-facts">
+      <div class="nb-fact"><div class="nf-v num">486</div><div class="nf-k">Clinics in the registry</div></div>
+      <div class="nb-fact"><div class="nf-v num">13</div><div class="nf-k">Publish a readable price</div></div>
+      <div class="nb-fact"><div class="nf-v num">11</div><div class="nf-k">Treatments priced here</div></div>
+      <div class="nb-fact"><div class="nf-v num">34</div><div class="nf-k">Price lines published</div></div>
+      <div class="nb-fact"><div class="nf-v num">24 October 2026</div><div class="nf-k">Prices read on</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="tight" style="padding-top:34px">
+  <div class="wrap">
+    <div class="notice" style="margin-bottom:24px">
+      <div class="n-ic">i</div>
+      <div style="flex:1">
+        <b>13 of 486 Sinsa clinics publish a price we can read</b>
+        <p>The other 473 are in the registry but publish nothing we can quote. We would rather show 13 real prices than 486 empty rows.</p>
+        <div class="n-track"><i style="width:2.7%"></i></div>
+      </div>
+    </div>
+
+    <div class="mapbox" style="margin-bottom:30px">
+      <div class="map-head">
+        <b>Sinsa on the map</b>
+        <span class="small muted" data-map-count>loading&hellip;</span>
+      </div>
+      <div class="map-live" data-map data-center="37.5219,127.0258" data-zoom="14" data-dong="신사동" data-dong-label="Sinsa" data-registry-total="486"></div>
+      <div class="map-note">
+        <b>Every pin is a clinic with a published price</b>
+        <span>Positions come from the national medical facility registry, not from a paid directory. The 473 Sinsa clinics without a readable price are not drawn &mdash; we have no price to show for them.</span>
+        <div class="map-legend-live">
+          <span><i style="background:var(--brand)"></i> Up to 6 published treatments</span>
+          <span><i style="background:var(--accent)"></i> 7 or more published treatments</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-between" style="margin-bottom:20px;align-items:flex-end">
+      <div>
+        <h2 class="h2">Sinsa clinics with published prices</h2>
+        <p class="muted small">Every figure is the clinic&rsquo;s own published figure, read on 24 October 2026.</p>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="clinics.html">Open full list with filters</a>
+    </div>
+
+    <div class="grid-2">
+      <article class="card" style="padding:0;overflow:hidden">
+        <div style="padding:20px 20px 0">
+          <div class="card-top">
+            <h4 style="font-size:17px">르디테의원</h4>
+            <span class="src own"><span class="dotmark"></span>price published</span>
+          </div>
+          <p class="small muted" style="margin-bottom:12px">서울특별시 강남구 도산대로 121, YK타워 4층</p>
+          <div class="tag-row" style="margin-bottom:14px">
+            <span class="tag">Filler</span><span class="tag">Skin booster</span><span class="tag">Lifting</span>
+          </div>
+        </div>
+        <div class="card-foot" style="margin:0;padding:14px 20px;background:var(--field-bg)">
+          <span class="price">from ₩200,000<small>lowest published figure</small></span>
+          <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+        </div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <div style="padding:20px 20px 0">
+          <div class="card-top">
+            <h4 style="font-size:17px">엘리온의원</h4>
+            <span class="src own"><span class="dotmark"></span>price published</span>
+          </div>
+          <p class="small muted" style="margin-bottom:12px">서울특별시 강남구 언주로 846, 글로벌메디컬빌딩 지하 1층</p>
+          <div class="tag-row" style="margin-bottom:14px">
+            <span class="tag">Ultherapy</span><span class="tag">Thermage</span><span class="tag">Lifting</span>
+          </div>
+        </div>
+        <div class="card-foot" style="margin:0;padding:14px 20px;background:var(--field-bg)">
+          <span class="price">from ₩300,000<small>lowest published figure</small></span>
+          <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+        </div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <div style="padding:20px 20px 0">
+          <div class="card-top">
+            <h4 style="font-size:17px">라인앤뷰의원</h4>
+            <span class="src own"><span class="dotmark"></span>price published</span>
+          </div>
+          <p class="small muted" style="margin-bottom:12px">서울특별시 강남구 도산대로 119, 12층</p>
+          <div class="tag-row" style="margin-bottom:14px">
+            <span class="tag">Fat reduction</span>
+          </div>
+        </div>
+        <div class="card-foot" style="margin:0;padding:14px 20px;background:var(--field-bg)">
+          <span class="price">from ₩550,000<small>lowest published figure</small></span>
+          <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+        </div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <div style="padding:20px 20px 0">
+          <div class="card-top">
+            <h4 style="font-size:17px">플라덴성형외과의원</h4>
+            <span class="src own"><span class="dotmark"></span>price published</span>
+          </div>
+          <p class="small muted" style="margin-bottom:12px">서울특별시 강남구 강남대로 624, ICT TOWER 4층</p>
+          <div class="tag-row" style="margin-bottom:14px">
+            <span class="tag">Botox / Coretox</span><span class="tag">Filler</span><span class="tag">Skin booster</span><span class="tag">Body contouring</span>
+          </div>
+        </div>
+        <div class="card-foot" style="margin:0;padding:14px 20px;background:var(--field-bg)">
+          <span class="price">from ₩19,000<small>lowest published figure</small></span>
+          <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <div>
+        <h2 class="h2">Prices in Sinsa</h2>
+        <p>What clinics in this neighborhood publish, by treatment. Ranges run from the lowest to the highest published figure we read.</p>
+      </div>
+    </div>
+
+    <div class="price-bar">
+      <div class="pb-head">
+        <h3>Published price ranges &middot; Sinsa</h3>
+        <span class="small muted">13 clinics &middot; read on 24 October 2026</span>
+      </div>
+      <div class="stack">
+        <div>
+          <div class="price-range"><span class="pr-end num">₩550,000</span><span class="pr-line"></span><span class="pr-end num">₩3,000,000</span></div>
+          <div class="pr-scale"><span>Fat reduction</span><span>6 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩30,000</span><span class="pr-line"></span><span class="pr-end num">₩450,000</span></div>
+          <div class="pr-scale"><span>Filler</span><span>5 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩99,000</span><span class="pr-line"></span><span class="pr-end num">₩3,000,000</span></div>
+          <div class="pr-scale"><span>Lifting</span><span>5 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩22,000</span><span class="pr-line"></span><span class="pr-end num">₩649,000</span></div>
+          <div class="pr-scale"><span>Skin booster</span><span>4 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩19,000</span><span class="pr-line"></span><span class="pr-end num">₩390,000</span></div>
+          <div class="pr-scale"><span>Botox / Coretox</span><span>3 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩500,000</span><span class="pr-line"></span><span class="pr-end num">₩12,000,000</span></div>
+          <div class="pr-scale"><span>Hair transplant</span><span>3 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩262,000</span><span class="pr-line"></span><span class="pr-end num">₩2,400,000</span></div>
+          <div class="pr-scale"><span>Ultherapy</span><span>2 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩500,000</span><span class="pr-line"></span><span class="pr-end num">₩2,680,000</span></div>
+          <div class="pr-scale"><span>Thermage</span><span>2 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩77,000</span><span class="pr-line"></span><span class="pr-end num">₩2,700,000</span></div>
+          <div class="pr-scale"><span>Body contouring</span><span>2 clinics</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩99,000</span><span class="pr-line"></span><span class="pr-end num">₩99,000</span></div>
+          <div class="pr-scale"><span>Juvelook</span><span>1 clinic</span></div>
+        </div>
+        <div>
+          <div class="price-range"><span class="pr-end num">₩350,000</span><span class="pr-line"></span><span class="pr-end num">₩350,000</span></div>
+          <div class="pr-scale"><span>Rejuran</span><span>1 clinic</span></div>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:6px">These are the clinics&rsquo; own figures. Where a clinic lists a unit &mdash; cc, shots, units &mdash; the unit is not normalised, so a range may compare a 1cc line with a 100-shot line. The clinic detail page shows the exact wording.</p>
+    </div>
+
+    <div class="limits" style="margin-top:22px">
+      <h3>What we cannot tell you about Sinsa</h3>
+      <ul>
+        <li>Which of the 13 is best. We do not rank quality and we have not read a single patient review.</li>
+        <li>What a treatment costs for you. Units differ between clinics and the amount is decided at consultation.</li>
+        <li>Whether a clinic still has a website. 609 of the 2,387 clinics in the three districts had a website on file; 1,778 did not.</li>
+        <li>Whether these prices are current at the moment you read them. We re-read weekly, not continuously.</li>
+      </ul>
+    </div>
+
+    <div class="panel" style="margin-top:40px">
+      <div class="row-between" style="align-items:flex-start;gap:36px">
+        <div style="max-width:560px">
+          <h3>Ask about Sinsa clinics</h3>
+          <p class="p-sub" style="margin-bottom:16px">Tell us the treatment and the date you can come. We will match you with a clinic in Sinsa that publishes prices and pass your message on.</p>
+          <div class="row" style="gap:10px;flex-wrap:wrap">
+            <a class="btn btn-accent" href="#consult">Send an enquiry</a>
+            <a class="btn btn-ghost" href="procedure.html">See treatment pages</a>
+          </div>
+        </div>
+        <div style="flex:1;min-width:300px">
+          <div class="panel" style="margin:0;background:var(--field-bg);box-shadow:none">
+            <h3 style="font-size:15px">Other neighborhoods</h3>
+            <p class="small muted" style="margin-top:4px">Priced clinics out of registry records.</p>
+            <div class="pill-list" style="margin-top:12px">
+            <a class="pill" href="neighborhood.html">Seocho &middot; 10 priced of 276</a>
+            <a class="pill" href="neighborhood.html">Yeoksam &middot; 6 priced of 307</a>
+            <a class="pill" href="neighborhood.html">Nonhyeon &middot; 6 priced of 301</a>
+            <a class="pill" href="neighborhood.html">Cheongdam &middot; 3 priced of 225</a>
+            <a class="pill" href="neighborhood.html">Banpo &middot; 2 priced of 105</a>
+            <a class="pill" href="neighborhood.html">Sincheon &middot; 2 priced of 40</a>
+            <a class="pill" href="neighborhood.html">Jamwon &middot; 1 priced of 108</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/vendor/leaflet.js"></script>
+<script src="assets/vendor/leaflet-markercluster.js"></script>
+<script src="assets/price-points.js"></script>
+<script src="assets/map.js"></script>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>

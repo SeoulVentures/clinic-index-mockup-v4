@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinics with published prices — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+<link rel="stylesheet" href="assets/vendor/leaflet.css">
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="index.html">01 Home</a>
+  <a href="clinics.html" class="on">02 Clinic list</a>
+  <a href="clinic-detail.html">03 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">04 Registry record (no price)</a>
+  <a href="neighborhood.html">05 Neighborhood guide</a>
+  <a href="procedure.html">06 Procedure page</a>
+  <a href="coverage.html">07 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumb"><a href="index.html">Home</a> / <span>Clinics</span></nav>
+</div>
+
+<section class="tight" style="padding-top:20px">
+  <div class="wrap">
+    <div class="notice" style="margin-bottom:22px">
+      <div class="n-ic">i</div>
+      <div style="flex:1">
+        <b>These are the 46 clinics that publish a price we can read</b>
+        <p>Out of 2,387 skin and plastic clinics in Gangnam, Seocho and Songpa, 609 have a website on file and 467 of those sites were reachable. 46 publish a treatment price in a readable form. Those 46 are listed here. <a href="coverage.html" style="color:var(--brand);font-weight:600">How we counted →</a></p>
+        <div class="n-track"><i style="width:1.9%"></i></div>
+      </div>
+    </div>
+
+    <div class="list-layout">
+      <aside class="filters">
+        <div class="fbox">
+          <h5>Registry filters</h5>
+          <p class="fbox-sub">Five fields the national medical facility registry holds for every clinic.</p>
+
+          <h6 class="faxis">Year established</h6>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Any year (46)</option>
+              <option>Opened 2020 or later (28)</option><option>Opened in the 2010s (12)</option><option>Opened in the 2000s (6)</option>
+            </select>
+<div class="fnote">Registry records this for 2,380 of 2,387 (99.7%) clinics in the pool.</div>
+          </div>
+
+          <h6 class="faxis">Operating type</h6>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Any operating type (46)</option>
+              <option>Sole proprietor (45)</option><option>Operating type not in the registry (1)</option>
+            </select>
+<div class="fnote">Registry records this for 2,367 of 2,387 (99.2%) clinics in the pool.</div>
+          </div>
+
+          <h6 class="faxis">Administrative neighborhood</h6>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>All neighborhoods (11)</option>
+              <option>Sinsa (13)</option><option>Seocho (10)</option><option>Nonhyeon (6)</option><option>Yeoksam (6)</option><option>Cheongdam (3)</option><option>Banpo (2)</option><option>Sincheon (2)</option><option>Samsung (1)</option><option>Seokchon (1)</option><option>Jamsil (1)</option><option>Jamwon (1)</option>
+            </select>
+<div class="fnote">Registry records this for 2,380 of 2,387 (99.7%) clinics in the pool.</div>
+          </div>
+
+          <h6 class="faxis">Parking</h6>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Any parking (46)</option>
+              <option>Own parking (4)</option><option>Parking nearby (2)</option><option>Parking not in the registry (40)</option>
+            </select>
+<div class="fnote">Registry records this for 225 of 2,387 (9.4%) clinics in the pool.</div>
+          </div>
+
+          <h6 class="faxis">Saturday treatment</h6>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Any (46)</option>
+              <option>Open on Saturday (7)</option><option>Saturday hours not in the registry (39)</option>
+            </select>
+<div class="fnote">Registry records this for 248 of 2,387 (10.4%) clinics in the pool.</div>
+          </div>
+
+          <div class="notice warm" style="margin-top:16px">
+            <div class="n-ic" style="background:var(--accent)">!</div>
+            <div>
+              <b>Two filters are mostly empty</b>
+              <p>Only 225 of the 2,387 clinics in the pool have parking on file, and only 248 have Saturday hours. That is a gap in the registry, not in our crawl &mdash; so we show &ldquo;not in the registry&rdquo; as its own option instead of leaving you to wonder.</p>
+            </div>
+          </div>
+
+          <h5 style="margin-top:22px">Price filters</h5>
+          <div class="fgroup" style="margin-top:12px">
+            <select class="fsel">
+              <option>Any treatment (15)</option>
+              <option>Botox / Coretox (24)</option><option>Filler (25)</option><option>Lifting (20)</option><option>Rejuran (13)</option><option>Fat reduction (11)</option><option>Laser toning (8)</option><option>Thermage (9)</option><option>Ultherapy (10)</option><option>Juvelook (11)</option><option>Skin booster (9)</option><option>Body contouring (9)</option><option>Hair transplant (5)</option><option>Potenza (4)</option><option>Pico laser (2)</option><option>IPL (1)</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Any published price</option>
+              <option>Under ₩150,000</option>
+              <option>₩150,000 – ₩500,000</option>
+              <option>₩500,000 – ₩1,500,000</option>
+              <option>Over ₩1,500,000</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label class="chk"><input type="checkbox"> 1 treatment</label>
+            <label class="chk"><input type="checkbox"> 2–3 treatments</label>
+            <label class="chk"><input type="checkbox" checked> 4 or more</label>
+          </div>
+          <h5 style="margin-top:20px">Sort</h5>
+          <div class="fgroup">
+            <select class="fsel">
+              <option>Most treatments published</option>
+              <option>Lowest published price</option>
+              <option>Recently opened</option>
+              <option>Neighborhood</option>
+            </select>
+          </div>
+          <button class="btn btn-ghost btn-block btn-sm" style="margin-top:16px">Reset filters</button>
+        </div>
+
+        <div class="limits">
+          <h3>What this list is</h3>
+          <p class="p-sub">A price list, not a ranking.</p>
+          <ul>
+            <li>Only clinics with a published price appear.</li>
+            <li>The figure shown is that clinic's own published figure.</li>
+            <li>Nothing is ranked by quality &mdash; we cannot measure that.</li>
+            <li>The five registry filters come from the national medical facility registry, so they are the clinic's own record rather than our estimate.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main>
+        <div class="mapbox">
+          <div class="map-head">
+            <b>Map view</b>
+            <span class="small muted" data-map-count>loading…</span>
+          </div>
+          <div class="map-live" data-map data-center="37.506,127.039" data-zoom="12" data-registry-total="2387"></div>
+          <div class="map-note">
+            <b>Every pin is a clinic with a published price</b>
+            <span>Positions come from the national medical facility registry, not from a paid directory. 1 of the 46 priced clinics carries no registry coordinates and is not drawn.</span>
+            <div class="map-legend-live">
+              <span><i style="background:var(--brand)"></i> Up to 7 published treatments</span>
+              <span><i style="background:var(--accent)"></i> 8 or more published treatments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-toolbar">
+          <div class="lt-l">
+            <h1>Clinics with published prices</h1>
+            <span class="small muted num">46 clinics</span>
+          </div>
+          <div class="lt-r">
+            <div class="seg"><span class="on">List</span><span>Map</span></div>
+            <span>Sort: Most treatments published</span>
+          </div>
+        </div>
+
+        <div class="pill-list" style="margin-bottom:18px">
+          <span class="pill on">All</span>
+          <span class="pill">Sinsa (13)</span><span class="pill">Seocho (10)</span><span class="pill">Yeoksam (6)</span><span class="pill">Nonhyeon (6)</span><span class="pill">Cheongdam (3)</span><span class="pill">Banpo (2)</span><span class="pill">Sincheon (2)</span><span class="pill">Jamwon (1)</span>
+        </div>
+
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>메디스캔의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 369, 에이플러스에셋타워 20층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Pico laser</span>
+              <span class="tag">Sat 09:00–14:00</span><span class="tag">Parking nearby</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-525-5775</b></span>
+              <span>Opened: <b>2005</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩30,000<small class="pr-note">Pico laser &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>별성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 사평대로56길 6, 2,3,4,5층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>1833-8898</b></span>
+              <span>Opened: <b>2015</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩200,000<small class="pr-note">Filler &middot; 4 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>임이석테마피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">잠원동 &middot; 서초구 &middot; 서울특별시 서초구 나루터로 78, 임이석 테마피부과 B2,B1,1,2,3,5층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Lifting</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span><span class="tag">Ultherapy</span>
+              <span class="tag">Sat 09:30–17:00</span><span class="tag">Own parking &amp;middot; 50 spaces</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>3446-1110</b></span>
+              <span>Opened: <b>2008</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩500,000<small class="pr-note">Lifting &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>와이케이(YK)박윤기피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 서초대로 316, 401호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Laser toning</span>
+              <span class="tag">Sat 10:00–14:00</span><span class="tag">Own parking &amp;middot; 50 spaces</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6052-1125</b></span>
+              <span>Opened: <b>2013</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩100,000<small class="pr-note">Botox / Coretox &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>영영영의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">반포동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 509, 하늘안과 B동 7층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Skin booster</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>not published</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩100,000<small class="pr-note">Filler &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>21성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 441, 서산빌딩 10층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-596-2121</b></span>
+              <span>Opened: <b>2022</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩1,650,000<small class="pr-note">Fat reduction &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>셀린의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 서초대로73길 9, 타임빌딩 3층 401호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Ultherapy</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-532-2550</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩490,000<small class="pr-note">Ultherapy &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>강남 리쥬엘의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 403, 8층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Rejuran</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-537-8889</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩100,000<small class="pr-note">Filler &middot; 7 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>메종드엠의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 433, 3, 4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-533-7001</b></span>
+              <span>Opened: <b>2023</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩250,000<small class="pr-note">Filler &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>유픽의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 403, 5층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Ultherapy</span><span class="tag">Skin booster</span><span class="tag">Potenza</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6160-5000</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩300,000<small class="pr-note">Ultherapy &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>커스텀피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">반포동 &middot; 서초구 &middot; 서울특별시 서초구 강남대로 527, 브랜드칸 타워 16층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Skin booster</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>not published</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>유에이치셀의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 반포대로16길 30, 1층 101, 102, 108호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-2135-4393</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩50,000<small class="pr-note">Filler &middot; 7 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>고와의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">서초동 &middot; 서초구 &middot; 서울특별시 서초구 사평대로 368, 듀오 신논현빌딩 12층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Seocho</span>
+              <span class="tag">Thermage</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-591-7776</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩990,000<small class="pr-note">Thermage &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>제이셀성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">청담동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 428, 지하1층, 2층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Body contouring</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-512-0601</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩110,000<small class="pr-note">Filler &middot; 4 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>르디테의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 121, YK타워 4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Skin booster</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6085-0578</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩200,000<small class="pr-note">Filler &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>강남비엘에스의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 432, 점프밀라노 8층 4호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6677-2777</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩270,000<small class="pr-note">Filler &middot; 6 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>모리브의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 106, BK성형외과 9,10층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Hair transplant</span>
+              <span class="tag">Sat 09:00–18:00</span><span class="tag">Own parking &amp;middot; 1 spaces</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6083-6318</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩50,000<small class="pr-note">Botox / Coretox &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>클리프의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로94길 18, 12층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              <span class="tag">Sat 10:00–18:00</span><span class="tag">Own parking &amp;middot; 24 spaces</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6205-7878</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 8 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>엘리온의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 언주로 846, 글로벌메디컬빌딩 지하 1층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Lifting</span><span class="tag">Ultherapy</span><span class="tag">Thermage</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-511-1888</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩300,000<small class="pr-note">Lifting &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>신논현톡스앤필의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 484, HK빌딩 2,3층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Juvelook</span><span class="tag">Ultherapy</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6951-4882</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩229,000<small class="pr-note">Filler &middot; 6 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>르모아의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 선릉로 301, 201호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Botox / Coretox</span><span class="tag">Laser toning</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-565-2486</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩80,000<small class="pr-note">Botox / Coretox &middot; 2 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>라인앤뷰의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 119, 12층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-1600-9833</b></span>
+              <span>Opened: <b>2019</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩550,000<small class="pr-note">Fat reduction &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>플라덴성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 624, ICT TOWER 4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Ultherapy</span><span class="tag">Skin booster</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-900-5555</b></span>
+              <span>Opened: <b>2017</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩99,000<small class="pr-note">Filler &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>릴리브의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 842, 압구정빌딩 6층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Skin booster</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-2138-2775</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>압구정맘모스헤어라인의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 878, 중산빌딩 2층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Hair transplant</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-518-8782</b></span>
+              <span>Opened: <b>2023</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩2,000,000<small class="pr-note">Hair transplant &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>타겟성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 104, 1st Avenue 6층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-545-0345</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩120,000<small class="pr-note">Filler &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>바바성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 498, 명성빌딩 4~6층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Rejuran</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6207-8570</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩135,000<small class="pr-note">Filler &middot; 6 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>밸런스랩성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 109, 동원빌딩 3,4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Rejuran</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>1661-8581</b></span>
+              <span>Opened: <b>2023</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩110,000<small class="pr-note">Filler &middot; 9 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>루피엘의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 선릉로 669, 상경빌딩 7층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              <span class="tag">Sat 10:00–17:00</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-516-8890</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>탱글성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 842, 압구정빌딩 7층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-542-8427</b></span>
+              <span>Opened: <b>2022</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩30,000<small class="pr-note">Filler &middot; 4 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>루아베피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">청담동 &middot; 강남구 &middot; 서울특별시 강남구 도산대로 435, 삼이빌딩 5층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-3444-7577</b></span>
+              <span>Opened: <b>2025</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 3 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>아우어성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">논현동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 590, 미혜빌딩 7층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Rejuran</span><span class="tag">Fat reduction</span>
+              <span class="tag">Sat 10:00–16:00</span><span class="tag">Parking nearby</span>
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-542-0221</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩150,000<small class="pr-note">Filler &middot; 4 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>유레카피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 테헤란로 101, 8층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Laser toning</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-3446-7515</b></span>
+              <span>Opened: <b>2017</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩385,000<small class="pr-note">Filler &middot; 5 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>강남유앤아이의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 470, 808타워 5,6층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Rejuran</span><span class="tag">Juvelook</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6927-6022</b></span>
+              <span>Opened: <b>2018</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩15,000<small class="pr-note">Botox / Coretox &middot; 9 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>미인피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">청담동 &middot; 강남구 &middot; 서울특별시 강남구 압구정로 461, 210호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-594-3375</b></span>
+              <span>Opened: <b>2016</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩200,000<small class="pr-note">Filler &middot; 2 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>모모성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 압구정로 124, 지하1층~4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Hair transplant</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>1566-4766</b></span>
+              <span>Opened: <b>2019</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩1,375,000<small class="pr-note">Hair transplant &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>연세이앤비성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 842, 압구정빌딩 9층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-514-2252</b></span>
+              <span>Opened: <b>2007</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩1,000,000<small class="pr-note">Fat reduction &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>두한성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 언주로 869, 5층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-543-9870</b></span>
+              <span>Opened: <b>2006</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩1,500,000<small class="pr-note">Fat reduction &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>마인성형외과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 813</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>516-1175</b></span>
+              <span>Opened: <b>2011</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩2,800,000<small class="pr-note">Fat reduction &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>에스씨301의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">삼성동 &middot; 강남구 &middot; 서울특별시 강남구 영동대로 611, Chan&amp;Chan Tower 3,4,지하1층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span><span class="tag">Lifting</span><span class="tag">Fat reduction</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-511-1550</b></span>
+              <span>Opened: <b>2013</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩117,000<small class="pr-note">Filler &middot; 6 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>젬마의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신사동 &middot; 강남구 &middot; 서울특별시 강남구 논현로 815, 부르다문 빌딩 1층 6층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Hair transplant</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>518-0057</b></span>
+              <span>Opened: <b>2005</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩500,000<small class="pr-note">Hair transplant &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>슈리링의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">역삼동 &middot; 강남구 &middot; 서울특별시 강남구 강남대로 438, 스타플렉스 301호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Gangnam</span>
+              <span class="tag">Body contouring</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>070-8648-0844</b></span>
+              <span>Opened: <b>2026</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩1,000,000<small class="pr-note">Body contouring &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>서울삼성여성의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">잠실동 &middot; 송파구 &middot; 서울특별시 송파구 석촌호수로 61, 트리지움 413호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Songpa</span>
+              <span class="tag">Botox / Coretox</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-2202-0230</b></span>
+              <span>Opened: <b>2012</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩250,000<small class="pr-note">Botox / Coretox &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>연세에이앤비피부과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">석촌동 &middot; 송파구 &middot; 서울특별시 송파구 백제고분로 365, 태문빌딩 3층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Songpa</span>
+              <span class="tag">Filler</span><span class="tag">Botox / Coretox</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-417-7500</b></span>
+              <span>Opened: <b>2018</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩200,000<small class="pr-note">Filler &middot; 2 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>베스탑비뇨기과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신천동 &middot; 송파구 &middot; 서울특별시 송파구 올림픽로 269, 2층 221호</p>
+            <div class="cr-meta">
+              <span class="tag brand">Songpa</span>
+              <span class="tag">Filler</span><span class="tag">Lifting</span><span class="tag">Laser toning</span><span class="tag">IPL</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-416-4747</b></span>
+              <span>Opened: <b>2005</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩500,000<small class="pr-note">Filler &middot; 4 treatments published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+        <article class="clinic-row">
+          <div class="cr-main">
+            <h3>프리샤산부인과의원 <span class="src own"><span class="dotmark"></span>price published</span></h3>
+            <p class="cr-addr">신천동 &middot; 송파구 &middot; 서울특별시 송파구 송파대로 562, 4층</p>
+            <div class="cr-meta">
+              <span class="tag brand">Songpa</span>
+              <span class="tag">Thermage</span>
+              
+            </div>
+            <div class="cr-foot">
+              <span>Tel: <b>02-6412-1234</b></span>
+              <span>Opened: <b>2024</b></span>
+              <span>Prices read: <b>24 October 2026</b></span>
+            </div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price num">from ₩990,000<small class="pr-note">Thermage &middot; 1 treatment published</small><small class="pr-src">the clinic&rsquo;s own figure</small></div>
+            <a class="btn btn-accent btn-sm" href="clinic-detail.html">Enquire</a>
+            <a class="small" href="clinic-detail.html" style="color:var(--brand);font-weight:600">View profile</a>
+          </div>
+        </article>
+
+        <div class="row-between" style="margin-top:24px">
+          <span class="small muted">Showing all 46 priced clinics &middot; 2,341 registry clinics are not listed because they publish no readable price</span>
+        </div>
+
+        <div class="panel" style="margin-top:26px">
+          <div class="row-between" style="align-items:flex-start;gap:30px">
+            <div style="max-width:520px">
+              <h3>Looking for a clinic that is not here?</h3>
+              <p class="p-sub" style="margin-bottom:14px">Tell us the clinic name, the treatment and the neighborhood. We will look it up in the registry and check whether it publishes a price, then add it if it does.</p>
+              <a class="btn btn-primary" href="#">Request a clinic</a>
+            </div>
+            <div style="flex:1;min-width:280px">
+              <div class="notice warm">
+                <div class="n-ic" style="background:var(--accent)">!</div>
+                <div>
+                  <b>Listing rule</b>
+                  <p>A clinic appears here only when we read a price on its own website. Payment for placement is not accepted, and a clinic cannot pay to be ranked higher.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<script src="assets/vendor/leaflet.js"></script>
+<script src="assets/vendor/leaflet-markercluster.js"></script>
+<script src="assets/price-points.js"></script>
+<script src="assets/map.js"></script>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex</span></div>
+        <p>A directory of skin and plastic clinics in Gangnam, Seocho and Songpa, built from the national medical facility registry, with prices read from each clinic's own published price page.</p>
+      </div>
+      <div><h6>Find a clinic</h6><a href="clinics.html">All clinics</a><a href="#">Gangnam</a><a href="#">Seocho</a><a href="#">Songpa</a></div>
+      <div><h6>Treatments</h6><a href="procedure.html">Botox</a><a href="#">Filler</a><a href="#">Rejuran</a><a href="#">Ultherapy</a></div>
+      <div><h6>About</h6><a href="coverage.html">Data coverage</a><a href="#">How we collect</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>Clinic records: Korean national medical facility registry (Ministry of the Interior and Safety). Prices: each clinic's own published page, read on 24 October 2026.</span>
+      <span>© 2026 SeoulVenture — design mockup, not a live site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/palette-switch.js"></script>
+</body>
+</html>
