@@ -127,14 +127,14 @@
             <tr>
               <td><b>Find a website</b><div class="pt-sub">For clinics that still have no URL on file</div></td>
               <td class="mt-n">1,778 without a URL</td>
-              <td>Monthly, in slices</td>
-              <td>$17.78 &middot; 3,556 Brave requests</td>
+              <td>Monthly, on the 1st, in slices</td>
+              <td>$17.78 for a full sweep &middot; $0 within the free allowance</td>
             </tr>
             <tr>
               <td><b>Re-read prices</b><div class="pt-sub">Every clinic we have a URL for</div></td>
               <td class="mt-n">609 sites</td>
-              <td>Weekly</td>
-              <td>None &middot; 51 seconds</td>
+              <td>Weekly, on Tuesdays</td>
+              <td>None &middot; 126 seconds</td>
             </tr>
             <tr>
               <td><b>Re-find dead links</b><div class="pt-sub">For sites that stopped responding</div></td>
@@ -144,7 +144,7 @@
             </tr>
           </tbody>
         </table>
-          <p class="small muted" style="margin-top:14px">The price re-read takes 51 seconds for all 609 known sites &mdash; we measured it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+          <p class="small muted" style="margin-top:14px">The price re-read takes 126 seconds for all 609 known sites &mdash; we measured it, and it runs on a timer rather than on somebody remembering to run it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
         </div>
 
         <div class="panel">
@@ -176,6 +176,7 @@
             <div>
               <b>The search quota is currently spent</b>
               <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We used it, and the API is now refusing further calls until the month resets. A full sweep needs 3,556 requests, so it fits inside the free allowance only if it is spread over about 3.6 months of 1,000 requests each; otherwise it needs a paid top-up. We are not publishing clinics we have not actually reached &mdash; a quota wall is a reason to wait, not a reason to guess.</p>
+              <p style="margin-top:10px">So the sweep is built to run itself within that allowance. It counts its own requests, stops at the cap without changing anything else, and picks up again on the first of the next month &mdash; about 500 clinics a month, roughly four months to cover all 1,778. If the plan is topped up, the same job simply moves faster.</p>
             </div>
           </div>
         </div>
@@ -236,28 +237,28 @@
             <tbody>
               <tr>
                 <td><b>robots.txt</b></td>
-                <td class="mt-n">328 hosts publish one &middot; 257 return 404</td>
-                <td>We read it and follow it. 53 hosts disallow everything.</td>
+                <td class="mt-n">409 hosts publish one we can read &middot; 81 have none &middot; 8 refuse to send it &middot; 87 are unreachable</td>
+                <td>We read it and follow it. 13 hosts disallow everything, and 8 will not give us the file at all &mdash; we collect from neither.</td>
               </tr>
               <tr>
                 <td><b>Disallow: /</b></td>
-                <td class="mt-n">53 hosts (9%)</td>
-                <td>We do not collect from these at all.</td>
+                <td class="mt-n">13 hosts (2.2%)</td>
+                <td>We do not collect from these at all. We keep the last figure we read and show the date it was read, so an old number is never dressed up as a new one.</td>
               </tr>
               <tr>
                 <td><b>Crawl-delay</b></td>
-                <td class="mt-n">25 hosts specify one &middot; median 10s &middot; max 3,600s</td>
-                <td>We wait exactly as long as they ask. At 3,600s that is one visit a day.</td>
+                <td class="mt-n">8 hosts specify one &middot; median 180s &middot; max 3,600s</td>
+                <td>We wait exactly as long as they ask, between two requests to the same host. At 3,600s that is one visit a day, and a visit on our weekly cycle still clears it.</td>
               </tr>
               <tr>
                 <td><b>Price paths</b></td>
-                <td class="mt-n">4 hosts disallow their price path</td>
-                <td>We skip the price page on those four.</td>
+                <td class="mt-n">5 hosts disallow their price path</td>
+                <td>We skip the price page on those five.</td>
               </tr>
               <tr>
                 <td><b>Identification</b></td>
                 <td class="mt-n">All of our requests</td>
-                <td>We send our own user-agent with a contact URL, and we keep at least one second between visits to the same host.</td>
+                <td>We send our own user-agent &mdash; <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px">SeoulVenturesClinicIndex/1.0 (+https://seoulclinicindex.com/contact)</span> &mdash; so a site can see who is asking and reach us. We never visit the same host twice within a second, and we wait exactly as long as a site asks for when it sets a crawl-delay.</td>
               </tr>
             </tbody>
           </table>
