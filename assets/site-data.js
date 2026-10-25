@@ -2463,7 +2463,7 @@ window.SCI_DATA = {
   "withPrice": 52,
   "seoulRegistry": 5444,
   "seoulWithUrl": 1103,
-  "seoulProjected": 685
+  "seoulProjected": 83
  },
  "collectedOn": "2026-10-24"
 };
