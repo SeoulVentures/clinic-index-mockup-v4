@@ -58,10 +58,10 @@
     <p class="nb-sub">This page exists because a directory that hides its coverage is worse than no directory. Here is the whole funnel, measured on 24 October 2026, and the limits that follow from it.</p>
     <div class="cov-facts">
       <div class="cov-fact"><div class="nf-v num">2,387</div><div class="nf-k">Clinics in the registry</div></div>
-      <div class="cov-fact"><div class="nf-v num">46</div><div class="nf-k">Listed here, as of 24 Oct</div></div>
-      <div class="cov-fact"><div class="nf-v num">1.9%</div><div class="nf-k">Of the candidate pool</div></div>
+      <div class="cov-fact"><div class="nf-v num">44</div><div class="nf-k">Listed here, as of 24 Oct</div></div>
+      <div class="cov-fact"><div class="nf-v num">1.8%</div><div class="nf-k">Of the candidate pool</div></div>
       <div class="cov-fact"><div class="nf-v num">5,444</div><div class="nf-k">Skin and plastic clinics across Seoul</div></div>
-      <div class="cov-fact"><div class="nf-v num">~83</div><div class="nf-k">Priced clinics, if we covered all of Seoul</div></div>
+      <div class="cov-fact"><div class="nf-v num">~80</div><div class="nf-k">Priced clinics, if we covered all of Seoul</div></div>
     </div>
   </div>
 </section>
@@ -104,15 +104,15 @@
               <div class="fs-t">Publish a beauty treatment with an amount</div>
               <div class="fs-d">A treatment name and a figure we could read as a per-treatment price.</div>
             </div>
-            <div class="fs-v num">52<small>price pages found</small></div>
+            <div class="fs-v num">51<small>price pages found</small></div>
           </div>
           <div class="funnel-step last">
             <div class="fs-n">5</div>
             <div>
               <div class="fs-t">Listed on this site</div>
-              <div class="fs-d">6 of the 52 were excluded: the only figures they published were packages, per-graft unit prices, or masked amounts we could not read as a treatment price.</div>
+              <div class="fs-d">7 of the 51 were excluded: the only figures they published were packages, per-graft unit prices, or masked amounts we could not read as a treatment price. A package or a multi-session course is not a price for one treatment, so it is left out of every range on this site.</div>
             </div>
-            <div class="fs-v num">46<small>1.9% of the pool</small></div>
+            <div class="fs-v num">44<small>1.8% of the pool</small></div>
           </div>
         </div>
           <p class="small muted" style="margin-top:18px">The single biggest drop is step 2: 1,778 of the 2,387 clinics have no website on file at all. That is a data availability fact, not something we can fix by crawling harder.</p>
@@ -128,7 +128,7 @@
               <td><b>Find a website</b><div class="pt-sub">For clinics that still have no URL on file</div></td>
               <td class="mt-n">1,778 without a URL</td>
               <td>Monthly on the 1st, plus weekly on Thursdays</td>
-              <td>$0 within the free allowance &middot; $9&ndash;$17.50 if bought outright</td>
+              <td>$0 &middot; inside the free monthly allowance, no paid top-up</td>
             </tr>
             <tr>
               <td><b>Re-read prices</b><div class="pt-sub">Every clinic we have a URL for</div></td>
@@ -144,7 +144,8 @@
             </tr>
           </tbody>
         </table>
-          <p class="small muted" style="margin-top:14px">The price re-read takes 126 seconds for all 609 known sites &mdash; we measured it, and it runs on a timer rather than on somebody remembering to run it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+          <p class="small muted" style="margin-top:14px">The price re-read takes 126 seconds for the 590 sites we are allowed to read &mdash; we measured it, and it runs on a timer rather than on somebody remembering to run it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+          <p class="small muted" style="margin-top:10px">Every read is kept as a snapshot for 180 days, together with what changed since the one before. After that the snapshots are deleted: long enough to show a price moving, short enough that an old archive never gets mistaken for today&rsquo;s price.</p>
           <p class="small muted" style="margin-top:10px">Both jobs are installed as machine timers that survive a reboot, so neither one depends on anyone remembering. The sweep is deliberately scheduled <b>after</b> the moment the monthly search allowance refreshes &mdash; that refresh falls on the first of each month at 09:00 KST, which we measured from the API&rsquo;s own rate-limit headers, so the sweep runs at 10:00 that day and then again on Thursdays. Waking up before the allowance refreshes would waste the run.</p>
         </div>
 
@@ -157,6 +158,7 @@
             <div><b>3 &middot; Check the name or the telephone number.</b> One of the two has to match as well. Both filters have to pass before we accept a URL.</div>
             <div><b>4 &middot; Read the site for prices.</b> Only once a URL is accepted do we open the site and look for a treatment with an amount.</div>
             <div><b>5 &middot; Remember it.</b> An accepted URL is written to a registry file and never searched for again. A clinic that failed is put on a backoff &mdash; one month, then three, then six, then it stops.</div>
+            <div><b>6 &middot; Skip the hosts we do not collect from.</b> 21 sites &mdash; 13 that state plainly that everything is disallowed, 8 whose robots.txt we cannot read &mdash; are never accepted, even when a search points straight at them.</div>
           </div>
           <div class="stack-sm">
             <div class="row" style="align-items:flex-start;gap:12px">
@@ -164,22 +166,22 @@
               <span class="small muted" style="flex:1">We ran the full pipeline on 36 clinics in two runs. 35 of the 36 produced a URL candidate, 16 passed the address and name checks, and 1 of those confirmed sites had a treatment price we could read. That last number is the honest one: finding the website does not mean the clinic publishes a price. The second run stopped after 6 clinics because the monthly search allowance ran out, so the sample is small.</span>
             </div>
             <div class="row" style="align-items:flex-start;gap:12px">
-              <span class="src none">not published</span>
-              <span class="small muted" style="flex:1">One or two requests per clinic. When the coordinate search already produces a match we stop there and skip the wider district search, so 1,778 clinics take roughly 1,800&ndash;3,500 requests rather than twice that many. At the search plan&rsquo;s rate that is $9&ndash;$17.50 for a full sweep &mdash; and it does not need to be repeated, because every answer is cached.</span>
+              <span class="src none">free allowance</span>
+              <span class="small muted" style="flex:1">One or two requests per clinic. When the coordinate search already produces a match we stop there and skip the wider district search, so 1,778 clinics take roughly 1,800&ndash;3,500 requests rather than twice that many. We do not buy those requests: the free monthly allowance covers 750 of them a month, and every answer is cached, so a clinic is never searched twice.</span>
             </div>
             <div class="row" style="align-items:flex-start;gap:12px">
               <span class="src portal">projection</span>
-              <span class="small muted" style="flex:1">Across the whole pool, 46 of 2,387 clinics publish a price we can read &mdash; 1.9%. Applied to the 1,778, that is roughly 34 more clinics with a readable price, for $9&ndash;$17.50 of search. The sweep also produces a correct website for about 790 of them, which is worth having even where no price follows.</span>
+              <span class="small muted" style="flex:1">Across the whole pool, 44 of 2,387 clinics publish a price we can read &mdash; 1.8%. Applied to the 1,778, that is roughly 33 more clinics with a readable price. The sweep also produces a correct website for about 790 of them, which is worth having even where no price follows.</span>
             </div>
           </div>
           <div class="notice warm" style="margin-top:16px">
             <div class="n-ic" style="background:var(--accent)">!</div>
             <div>
-              <b>The search quota is currently spent</b>
-              <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We used it, and the API is now refusing further calls until the month resets. A full sweep needs roughly 1,800&ndash;3,500 requests, so it fits inside the free allowance only if it is spread over several months; otherwise it needs a paid top-up. We are not publishing clinics we have not actually reached &mdash; a quota wall is a reason to wait, not a reason to guess.</p>
+              <b>Free allowance only, spread over about four months</b>
+              <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We give the sweep 750 of them and keep the rest for our own searching, and we do not buy more. At the measured rate of one to two requests per clinic that is about 480 clinics a month, so all 1,778 take about four months. The sweep does not need to be repeated &mdash; every answer it finds is cached &mdash; so the cost of waiting is only that the list grows more slowly.</p>
               <p style="margin-top:10px">We measured when the allowance refreshes rather than guessing: the API&rsquo;s own rate-limit headers put the reset at <b>09:00 KST on the first of the month</b>, two seconds off the month boundary. The sweep is scheduled an hour after that &mdash; the 1st at 10:00 KST, then every Thursday at 06:20 KST &mdash; so a run can never wake up before the allowance exists.</p>
-              <p style="margin-top:10px">So the sweep is built to run itself within that allowance. It counts its own requests, stops at the cap without changing anything else, and picks up again on the next scheduled run. At 600 requests a month that is 150&ndash;300 clinics a month and roughly six to twelve months for all 1,778. If the plan is topped up, the same job simply moves faster.</p>
-              <p style="margin-top:10px">One thing we did learn the hard way: the search allowance is <b>shared</b> with other tools of ours that also search the web. Our own count said two requests; the account said a thousand spent. So the sweep now reads the remaining balance the server reports and stays inside it, rather than trusting a number it keeps on disk.</p>
+              <p style="margin-top:10px">So the sweep is built to run itself within that allowance. It counts its own requests, stops at the cap without changing anything else, and picks up again on the next scheduled run. We also read the remaining balance the server reports rather than trusting the number on disk, because the allowance is <b>shared</b> with other tools of ours that also search the web: our own count said two requests, the account said a thousand spent.</p>
+              <p style="margin-top:10px">And it works through the districts in a fixed order &mdash; the ones where clinics actually publish prices first &mdash; so the part of the sweep most likely to find a price happens earliest.</p>
             </div>
           </div>
         </div>
@@ -188,37 +190,37 @@
           <h3>The five filters, and how much of the registry fills them</h3>
           <p class="p-sub">Every filter on the clinic list comes from the registry itself, so a figure we show is the clinic&rsquo;s own record rather than our estimate. Three of the five are close to complete. Two are not.</p>
           <table class="metric-table">
-            <thead><tr><th>Filter</th><th>Registry field</th><th>Coverage in the 2,387-clinic pool</th><th>Of the 46 listed here</th></tr></thead>
+            <thead><tr><th>Filter</th><th>Registry field</th><th>Coverage in the 2,387-clinic pool</th><th>Of the 44 listed here</th></tr></thead>
             <tbody>
               <tr>
                 <td><b>Year established</b></td>
                 <td class="mt-n">Opening date</td>
                 <td class="mt-n">2,380 of 2,387 &middot; 99.7%</td>
-                <td class="mt-n">46 of 46</td>
+                <td class="mt-n">44 of 44</td>
               </tr>
               <tr>
                 <td><b>Operating type</b></td>
                 <td class="mt-n">Establishment classification</td>
                 <td class="mt-n">2,367 of 2,387 &middot; 99.2%</td>
-                <td class="mt-n">45 of 46</td>
+                <td class="mt-n">43 of 44</td>
               </tr>
               <tr>
                 <td><b>Administrative neighborhood</b></td>
                 <td class="mt-n">Neighborhood</td>
                 <td class="mt-n">2,380 of 2,387 &middot; 99.7%</td>
-                <td class="mt-n">46 of 46</td>
+                <td class="mt-n">44 of 44</td>
               </tr>
               <tr>
                 <td><b>Parking</b></td>
                 <td class="mt-n">Parking spaces, cost bearer, notes</td>
                 <td class="mt-n">225 of 2,387 &middot; 9.4%</td>
-                <td class="mt-n">6 of 46</td>
+                <td class="mt-n">6 of 44</td>
               </tr>
               <tr>
                 <td><b>Saturday treatment</b></td>
                 <td class="mt-n">Saturday start and end times</td>
                 <td class="mt-n">248 of 2,387 &middot; 10.4%</td>
-                <td class="mt-n">7 of 46</td>
+                <td class="mt-n">7 of 44</td>
               </tr>
             </tbody>
           </table>
@@ -241,12 +243,12 @@
               <tr>
                 <td><b>robots.txt</b></td>
                 <td class="mt-n">409 hosts publish one we can read &middot; 81 have none &middot; 8 refuse to send it &middot; 87 are unreachable</td>
-                <td>We read it and follow it. 13 hosts state plainly that everything is disallowed, and 8 will not give us the file at all &mdash; we collect from neither. Those are two different measurements: 13 is what the rules say, 8 is what we could not read.</td>
+                <td>We read it and follow it. 13 hosts state plainly that everything is disallowed, and 8 will not give us the file at all &mdash; we collect from neither. Those are two different measurements: 13 is what the rules say, 8 is what we could not read. Together that is 21 hosts.</td>
               </tr>
               <tr>
                 <td><b>Disallow: /</b></td>
                 <td class="mt-n">13 hosts (2.2%)</td>
-                <td>We do not collect from these at all. We keep the last figure we read and show the date it was read, so an old number is never dressed up as a new one.</td>
+                <td>We do not collect from these at all &mdash; not now, and not in the search sweep either. One clinic that had been picked up before we started checking these rules properly was taken off the list rather than kept with a date on it.</td>
               </tr>
               <tr>
                 <td><b>Crawl-delay</b></td>
@@ -280,6 +282,10 @@
               <span class="small muted" style="flex:1">The clinic itself labels the line as a first-visit or event price. We keep it and mark it, and we leave it out when we take a clinic&rsquo;s middle figure.</span>
             </div>
             <div class="row" style="align-items:flex-start;gap:12px">
+              <span class="src bundle">package</span>
+              <span class="small muted" style="flex:1">The figure covers more than one treatment &mdash; a device plus a filler, or a course of sessions. That is not a price for one treatment, so it does not enter any range on this site.</span>
+            </div>
+            <div class="row" style="align-items:flex-start;gap:12px">
               <span class="src none">not published</span>
               <span class="small muted" style="flex:1">The clinic is in the registry but publishes no amount we can read. It gets no price on this site, and no guess.</span>
             </div>
@@ -294,9 +300,9 @@
             <li><b>Quality.</b> We have not read a single patient review. Nothing on this site ranks a clinic by how good it is.</li>
             <li><b>Price for you.</b> The unit, the area and the amount are decided at consultation. A published figure is a starting point, not a quote.</li>
             <li><b>Which clinic is good value.</b> We can tell you what a clinic charges. We cannot tell you whether the result will be worth it, and we do not score clinics.</li>
-            <li><b>Every clinic.</b> 2,341 of the 2,387 clinics in the three districts are not listed. They publish no price we can read. <a href="clinics.html">See what we do list →</a></li>
+            <li><b>Every clinic.</b> 2,343 of the 2,387 clinics in the three districts are not listed. They publish no price we can read. <a href="clinics.html">See what we do list →</a></li>
             <li><b>Real-time prices.</b> We re-read weekly. Between reads a clinic can change its list, and we would not know until the next read.</li>
-            <li><b>A finished directory.</b> 46 is what is listed as of 24 October 2026, not a final number. The search sweep that fills the remaining 1,778 is running in slices, so the list grows and the price coverage on this page moves with it.</li>
+            <li><b>A finished directory.</b> 44 is what is listed as of 24 October 2026, not a final number. The search sweep that fills the remaining 1,778 is running in slices, so the list grows and the price coverage on this page moves with it.</li>
             <li><b>Doctor, hours, language, reception.</b> The registry does not hold these. We do not print them for a clinic we have not verified, so for most clinics on this site they are blank.</li>
             <li><b>Whether a price is the final one.</b> Prices may be quoted before VAT, and packages work out at a different effective rate. The clinic confirms at consultation.</li>
           </ul>
@@ -309,7 +315,7 @@
             <div class="card">
               <div class="icon-badge">◈</div>
               <h4 style="margin-top:12px">All of Seoul</h4>
-              <p>5,444 skin and plastic clinics across the 25 districts, and 1,103 of them (20.3%) already have a website on file. In our three districts, 46 of the 609 clinics that had one published a price we could read &mdash; 7.6%. Applied to Seoul&rsquo;s 1,103, that is about <b>83 clinics</b>. The search sweep would find more websites across the city, and the sites it finds publish prices less often, so this is a conservative figure.</p>
+              <p>5,444 skin and plastic clinics across the 25 districts, and 1,103 of them (20.3%) already have a website on file. In our three districts, 44 of the 609 clinics that had one published a price we could read &mdash; 7.2%. Applied to Seoul&rsquo;s 1,103, that is about <b>80 clinics</b>. The search sweep would find more websites across the city, and the sites it finds publish prices less often, so this is a conservative figure.</p>
             </div>
             <div class="card">
               <div class="icon-badge">↻</div>
@@ -348,7 +354,7 @@
             <div class="funnel-step last">
               <div class="fs-n">4</div>
               <div><div class="fs-t">Listed here</div></div>
-              <div class="fs-v num">46</div>
+              <div class="fs-v num">44</div>
             </div>
           </div>
         </div>
@@ -366,7 +372,7 @@
         <div class="panel" style="margin-top:16px">
           <h3>Listing rule</h3>
           <p class="p-sub">Payment for placement is not accepted, and a clinic cannot pay to be ranked higher. The list is sorted by published figure, which is a fact, not an opinion.</p>
-          <a class="btn btn-ghost btn-sm btn-block" style="margin-top:14px" href="clinics.html">See the 46 listed clinics</a>
+          <a class="btn btn-ghost btn-sm btn-block" style="margin-top:14px" href="clinics.html">See the 44 listed clinics</a>
         </div>
       </aside>
     </div>
