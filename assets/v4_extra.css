@@ -50,6 +50,7 @@
 .src.own{background:#EDF6EE;color:#2F6B3C;border-color:#CBE4D1}
 .src.portal{background:var(--warm-bg);color:var(--warm-ink);border-color:var(--warm-line)}
 .src.none{background:var(--line-2);color:var(--muted);border-color:var(--line)}
+.src.bundle{background:#F3EEF9;color:#5B4A7D;border-color:#DCD1EC}
 .src .dotmark{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
 
 .src-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
