@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map explorer — every clinic in the registry — SeoulClinicIndex (Design mockup)</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/themes.css">
+<link rel="stylesheet" href="assets/v4_extra.css">
+<link rel="stylesheet" href="assets/vendor/leaflet.css">
+<link rel="stylesheet" href="assets/vendor/leaflet-markercluster.css">
+<script>window.SCI_DONG_EN = {"신사동": "Sinsa", "역삼동": "Yeoksam", "논현동": "Nonhyeon", "서초동": "Seocho", "청담동": "Cheongdam", "반포동": "Banpo", "잠원동": "Jamwon", "방배동": "Bangbae", "대치동": "Daechi", "삼성동": "Samsung", "잠실동": "Jamsil", "신천동": "Sincheon", "문정동": "Munjeong", "도곡동": "Dogok", "가락동": "Garak", "방이동": "Bangi", "개포동": "Gaepo", "석촌동": "Seokchon", "거여동": "Geoye", "수서동": "Suseo", "양재동": "Yangjae", "송파동": "Songpa", "삼전동": "Samjeon", "장지동": "Jangji", "우면동": "Umyeon", "세곡동": "Segok", "풍납동": "Pungnap", "마천동": "Macheon", "자곡동": "Jagok", "오금동": "Ogeum", "일원동": "Ilwon", "압구정동": "Apgujeong", "내곡동": "Naegok", "율현동": "Yulhyon", "가락본동": "Garakbon"};</script>
+<script defer src="assets/site-data.js"></script>
+<script defer src="assets/registry-points.js"></script>
+<script defer src="assets/vendor/gu3-boundary.js"></script>
+<script defer src="assets/vendor/han-river.js"></script>
+<script defer src="assets/vendor/leaflet.js"></script>
+<script defer src="assets/vendor/leaflet-markercluster.js"></script>
+<script defer src="assets/explore.js"></script>
+<script>
+(function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body class="xp">
+<div class="mock-banner">
+  <span class="pill">DESIGN MOCKUP v4</span>
+  <span>Static screens for review &middot; every count and every price was measured on 24 October 2026 &middot; anything invented is labelled <b>placeholder</b></span>
+</div>
+<div class="mock-nav">
+  <a href="explore.html" class="on">01 Map explorer</a>
+  <a href="index.html">02 Home</a>
+  <a href="clinics.html">03 Clinic list</a>
+  <a href="clinic-detail.html">04 Clinic detail (priced)</a>
+  <a href="clinic-detail-minimal.html">05 Registry record (no price)</a>
+  <a href="neighborhood.html">06 Neighborhood guide</a>
+  <a href="procedure.html">07 Procedure page</a>
+  <a href="coverage.html">08 Data coverage</a>
+  <a href="palette.html">▤ Palette</a>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><span>Clinic records from the Korean national medical facility registry &middot; prices read from each clinic's own published price page</span></div>
+    <div class="tb-right"><span class="tb-pill">EN</span><a href="#">Help</a><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"><span>SCI</span></span><span>SeoulClinicIndex<small>Skin &amp; Plastic Clinics in Seoul</small></span></a>
+    <nav class="nav-links">
+      <a href="explore.html">Explore the map</a>
+      <a href="clinics.html">Find a clinic</a>
+      <a href="procedure.html">Treatments</a>
+      <a href="neighborhood.html">Neighborhoods</a>
+      <a href="coverage.html">Data coverage</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#consult">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="xp-app">
+  <div id="xp-map" aria-label="Map of clinics in Gangnam, Seocho and Songpa"></div>
+
+  <aside class="xp-side" id="xp-side">
+    <div class="xp-head">
+      <h1>Explore every clinic<br>on the map</h1>
+      <p class="xp-count" id="xp-count">&nbsp;</p>
+    </div>
+    <div class="xp-search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+      <input id="xp-q" type="search" autocomplete="off"
+             placeholder="Search a clinic or neighborhood &mdash; try Sinsa, Apgujeong, Rejuran">
+    </div>
+    <div class="xp-chips">
+      <button class="chip on" data-st="all" type="button">All plotted <b>2,367</b></button>
+      <button class="chip st2" data-st="2" type="button"><i class="lg st2"></i>Published price <b>43</b></button>
+      <button class="chip st1" data-st="1" type="button"><i class="lg st1"></i>Website, no price yet <b>563</b></button>
+      <button class="chip st0" data-st="0" type="button"><i class="lg st0"></i>Registry only <b>1,761</b></button>
+    </div>
+    <div class="xp-chips gu">
+      <button class="chip-ghost on" data-gu="all" type="button">All districts</button>
+      <button class="chip-ghost" data-gu="강남구" type="button">Gangnam</button>
+      <button class="chip-ghost" data-gu="서초구" type="button">Seocho</button>
+      <button class="chip-ghost" data-gu="송파구" type="button">Songpa</button>
+    </div>
+    <div class="xp-list" id="xp-list"></div>
+    <p class="xp-cap" id="xp-cap">Showing the first 150 matches &mdash; narrow with search or a filter.</p>
+  </aside>
+
+  <div class="xp-legend">
+    <div class="xl-row"><i class="lg st2"></i>Published price &mdash; read from the clinic's own page</div>
+    <div class="xl-row"><i class="lg st1"></i>Website on file &mdash; price not readable yet</div>
+    <div class="xl-row"><i class="lg st0"></i>Registry record &mdash; website not found yet</div>
+    <div class="xl-note">Schematic map drawn from the registry's own coordinates &mdash; every dot is a real clinic record. 2,367 of 2,387 records have coordinates (20 do not). Measured on 24 October 2026.</div>
+  </div>
+
+  <button class="xp-fab" id="xp-toggle" type="button">Show list</button>
+</div>
