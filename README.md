@@ -24,6 +24,26 @@ illustration phase.
   cannot tell you, including the parts of the collection pipeline that are
   still waiting on a search quota.
 
+## How the collection stays current
+
+Both collection jobs run on machine timers that survive a reboot.
+
+| Job | Target | Cycle | Cost |
+|---|---|---|---|
+| Find a website | 1,778 clinics with no URL on file | Monthly on the 1st, plus weekly on Thursdays | Free allowance, or $9–$17.50 bought outright |
+| Re-read prices | 609 known sites | Weekly, on Tuesdays | None — 126 seconds, measured |
+| Re-find dead links | 142 dead URLs | Monthly, on the 1st | Covered by the first row |
+
+The search sweep is scheduled **after** the monthly free search allowance
+refreshes. That refresh falls on the first of each month at 09:00 KST — read
+from the API's own rate-limit headers, two seconds off the month boundary —
+so the sweep runs at 10:00 that day and again on Thursdays. Waking up before
+the allowance exists would waste the run.
+
+A clinic is found once and then cached, so the sweep shrinks as it goes. At
+600 requests a month it covers 150–300 clinics a month, and roughly six to
+twelve months for all 1,778.
+
 ## Screens
 
 | Screen | File |

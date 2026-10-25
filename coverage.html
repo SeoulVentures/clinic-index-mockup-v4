@@ -58,7 +58,7 @@
     <p class="nb-sub">This page exists because a directory that hides its coverage is worse than no directory. Here is the whole funnel, measured on 24 October 2026, and the limits that follow from it.</p>
     <div class="cov-facts">
       <div class="cov-fact"><div class="nf-v num">2,387</div><div class="nf-k">Clinics in the registry</div></div>
-      <div class="cov-fact"><div class="nf-v num">46</div><div class="nf-k">Listed here</div></div>
+      <div class="cov-fact"><div class="nf-v num">46</div><div class="nf-k">Listed here, as of 24 Oct</div></div>
       <div class="cov-fact"><div class="nf-v num">1.9%</div><div class="nf-k">Of the candidate pool</div></div>
       <div class="cov-fact"><div class="nf-v num">5,444</div><div class="nf-k">If we covered all of Seoul</div></div>
       <div class="cov-fact"><div class="nf-v num">~685</div><div class="nf-k">That would give, at this rate</div></div>
@@ -127,24 +127,25 @@
             <tr>
               <td><b>Find a website</b><div class="pt-sub">For clinics that still have no URL on file</div></td>
               <td class="mt-n">1,778 without a URL</td>
-              <td>Monthly, in slices</td>
-              <td>$17.78 &middot; 3,556 Brave requests</td>
+              <td>Monthly on the 1st, plus weekly on Thursdays</td>
+              <td>$0 within the free allowance &middot; $9&ndash;$17.50 if bought outright</td>
             </tr>
             <tr>
               <td><b>Re-read prices</b><div class="pt-sub">Every clinic we have a URL for</div></td>
               <td class="mt-n">609 sites</td>
-              <td>Weekly</td>
-              <td>None &middot; 51 seconds</td>
+              <td>Weekly, on Tuesdays</td>
+              <td>None &middot; 126 seconds</td>
             </tr>
             <tr>
               <td><b>Re-find dead links</b><div class="pt-sub">For sites that stopped responding</div></td>
               <td class="mt-n">142 dead URLs</td>
-              <td>Monthly</td>
+              <td>Monthly, on the 1st</td>
               <td>Covered by the first row</td>
             </tr>
           </tbody>
         </table>
-          <p class="small muted" style="margin-top:14px">The price re-read takes 51 seconds for all 609 known sites &mdash; we measured it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+          <p class="small muted" style="margin-top:14px">The price re-read takes 126 seconds for all 609 known sites &mdash; we measured it, and it runs on a timer rather than on somebody remembering to run it. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
+          <p class="small muted" style="margin-top:10px">Both jobs are installed as machine timers that survive a reboot, so neither one depends on anyone remembering. The sweep is deliberately scheduled <b>after</b> the moment the monthly search allowance refreshes &mdash; that refresh falls on the first of each month at 09:00 KST, which we measured from the API&rsquo;s own rate-limit headers, so the sweep runs at 10:00 that day and then again on Thursdays. Waking up before the allowance refreshes would waste the run.</p>
         </div>
 
         <div class="panel">
@@ -164,18 +165,21 @@
             </div>
             <div class="row" style="align-items:flex-start;gap:12px">
               <span class="src none">not published</span>
-              <span class="small muted" style="flex:1">Two requests per clinic, 3,556 requests for the 1,778, about 94 minutes on one machine. At the search plan&rsquo;s rate that is $17.78 for a full sweep &mdash; and it does not need to be repeated, because every answer is cached.</span>
+              <span class="small muted" style="flex:1">One or two requests per clinic. When the coordinate search already produces a match we stop there and skip the wider district search, so 1,778 clinics take roughly 1,800&ndash;3,500 requests rather than twice that many. At the search plan&rsquo;s rate that is $9&ndash;$17.50 for a full sweep &mdash; and it does not need to be repeated, because every answer is cached.</span>
             </div>
             <div class="row" style="align-items:flex-start;gap:12px">
               <span class="src portal">projection</span>
-              <span class="small muted" style="flex:1">Across the whole pool, 46 of 2,387 clinics publish a price we can read &mdash; 1.9%. Applied to the 1,778, that is roughly 34 more clinics with a readable price, for $17.78 of search. The sweep also produces a correct website for about 790 of them, which is worth having even where no price follows.</span>
+              <span class="small muted" style="flex:1">Across the whole pool, 46 of 2,387 clinics publish a price we can read &mdash; 1.9%. Applied to the 1,778, that is roughly 34 more clinics with a readable price, for $9&ndash;$17.50 of search. The sweep also produces a correct website for about 790 of them, which is worth having even where no price follows.</span>
             </div>
           </div>
           <div class="notice warm" style="margin-top:16px">
             <div class="n-ic" style="background:var(--accent)">!</div>
             <div>
               <b>The search quota is currently spent</b>
-              <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We used it, and the API is now refusing further calls until the month resets. A full sweep needs 3,556 requests, so it fits inside the free allowance only if it is spread over about 3.6 months of 1,000 requests each; otherwise it needs a paid top-up. We are not publishing clinics we have not actually reached &mdash; a quota wall is a reason to wait, not a reason to guess.</p>
+              <p>Our search plan includes $5 of free requests a month &mdash; 1,000 requests. We used it, and the API is now refusing further calls until the month resets. A full sweep needs roughly 1,800&ndash;3,500 requests, so it fits inside the free allowance only if it is spread over several months; otherwise it needs a paid top-up. We are not publishing clinics we have not actually reached &mdash; a quota wall is a reason to wait, not a reason to guess.</p>
+              <p style="margin-top:10px">We measured when the allowance refreshes rather than guessing: the API&rsquo;s own rate-limit headers put the reset at <b>09:00 KST on the first of the month</b>, two seconds off the month boundary. The sweep is scheduled an hour after that &mdash; the 1st at 10:00 KST, then every Thursday at 06:20 KST &mdash; so a run can never wake up before the allowance exists.</p>
+              <p style="margin-top:10px">So the sweep is built to run itself within that allowance. It counts its own requests, stops at the cap without changing anything else, and picks up again on the next scheduled run. At 600 requests a month that is 150&ndash;300 clinics a month and roughly six to twelve months for all 1,778. If the plan is topped up, the same job simply moves faster.</p>
+              <p style="margin-top:10px">One thing we did learn the hard way: the search allowance is <b>shared</b> with other tools of ours that also search the web. Our own count said two requests; the account said a thousand spent. So the sweep now reads the remaining balance the server reports and stays inside it, rather than trusting a number it keeps on disk.</p>
             </div>
           </div>
         </div>
@@ -236,28 +240,28 @@
             <tbody>
               <tr>
                 <td><b>robots.txt</b></td>
-                <td class="mt-n">328 hosts publish one &middot; 257 return 404</td>
-                <td>We read it and follow it. 53 hosts disallow everything.</td>
+                <td class="mt-n">409 hosts publish one we can read &middot; 81 have none &middot; 8 refuse to send it &middot; 87 are unreachable</td>
+                <td>We read it and follow it. 13 hosts state plainly that everything is disallowed, and 8 will not give us the file at all &mdash; we collect from neither. Those are two different measurements: 13 is what the rules say, 8 is what we could not read.</td>
               </tr>
               <tr>
                 <td><b>Disallow: /</b></td>
-                <td class="mt-n">53 hosts (9%)</td>
-                <td>We do not collect from these at all.</td>
+                <td class="mt-n">13 hosts (2.2%)</td>
+                <td>We do not collect from these at all. We keep the last figure we read and show the date it was read, so an old number is never dressed up as a new one.</td>
               </tr>
               <tr>
                 <td><b>Crawl-delay</b></td>
-                <td class="mt-n">25 hosts specify one &middot; median 10s &middot; max 3,600s</td>
-                <td>We wait exactly as long as they ask. At 3,600s that is one visit a day.</td>
+                <td class="mt-n">8 hosts specify one &middot; median 180s &middot; max 3,600s</td>
+                <td>We wait exactly as long as they ask, between two requests to the same host. At 3,600s that is one visit a day, and a visit on our weekly cycle still clears it.</td>
               </tr>
               <tr>
                 <td><b>Price paths</b></td>
-                <td class="mt-n">4 hosts disallow their price path</td>
-                <td>We skip the price page on those four.</td>
+                <td class="mt-n">5 hosts disallow their price path</td>
+                <td>We skip the price page on those five.</td>
               </tr>
               <tr>
                 <td><b>Identification</b></td>
                 <td class="mt-n">All of our requests</td>
-                <td>We send our own user-agent with a contact URL, and we keep at least one second between visits to the same host.</td>
+                <td>We send our own user-agent &mdash; <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px">SeoulVenturesClinicIndex/1.0 (+https://seoulclinicindex.com/contact)</span> &mdash; so a site can see who is asking and reach us. We never visit the same host twice within a second, and we wait exactly as long as a site asks for when it sets a crawl-delay.</td>
               </tr>
             </tbody>
           </table>
@@ -292,6 +296,7 @@
             <li><b>Which clinic is good value.</b> We can tell you what a clinic charges. We cannot tell you whether the result will be worth it, and we do not score clinics.</li>
             <li><b>Every clinic.</b> 2,341 of the 2,387 clinics in the three districts are not listed. They publish no price we can read. <a href="clinics.html">See what we do list →</a></li>
             <li><b>Real-time prices.</b> We re-read weekly. Between reads a clinic can change its list, and we would not know until the next read.</li>
+            <li><b>A finished directory.</b> 46 is what is listed as of 24 October 2026, not a final number. The search sweep that fills the remaining 1,778 is running in slices, so the list grows and the price coverage on this page moves with it.</li>
             <li><b>Doctor, hours, language, reception.</b> The registry does not hold these. We do not print them for a clinic we have not verified, so for most clinics on this site they are blank.</li>
             <li><b>Whether a price is the final one.</b> Prices may be quoted before VAT, and packages work out at a different effective rate. The clinic confirms at consultation.</li>
           </ul>
