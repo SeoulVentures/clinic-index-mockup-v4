@@ -48,6 +48,7 @@
   .pb .pcard .go a{color:var(--brand);font-weight:600}
   @media (max-width:900px){.pb .cards{grid-template-columns:1fr 1fr}}
   @media (max-width:620px){.pb .cards{grid-template-columns:1fr}}
+  @media (max-width:760px){.pb .table-scroll table{min-width:660px} .pb .sw{margin-right:4px} .pb th,.pb td{padding:9px 8px}}
 </style>
 <script>
 (function(){try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('sci.palette.v2')||'navy';if(t&&t!=='navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
@@ -85,6 +86,7 @@
 
   <h2 class="sec">Benchmark &mdash; sampled sites</h2>
   <p class="sub">Hex values read out of each site&rsquo;s own stylesheet or inline styles on 22 Oct 2026. Two brand tones are listed where a site uses both a primary and a secondary; the ground column lists the page background and the card surface.</p>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr>
@@ -135,6 +137,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <p class="small muted" style="margin-top:12px">Counting only the primary brand colour, two of the sites lead with a teal-family hue. Most use a dark ink or navy brand plane, and where a metallic accent appears it is gold or bronze in every case.</p>
 
   <h2 class="sec">Candidates</h2>

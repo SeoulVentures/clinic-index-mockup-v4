@@ -121,6 +121,7 @@
         <div class="panel">
           <h3>How the data stays current</h3>
           <p class="p-sub">Two different jobs on two different clocks. The expensive one runs less often.</p>
+        <div class="table-scroll">
         <table class="metric-table">
           <thead><tr><th>Job</th><th>Target</th><th>Cycle</th><th>Cost</th></tr></thead>
           <tbody>
@@ -144,6 +145,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
           <p class="small muted" style="margin-top:14px">The price re-read takes 135 seconds for the 584 sites we read &mdash; we measured it, and it runs on a timer rather than on somebody remembering to run it. Of the 609 sites on file, 21 are never touched because of the rules above, and a further few are held back because their crawl-delay is longer than a weekly visit can honour, so 584 is what a normal run reads. Korean clinic prices change roughly once or twice a year, so a weekly re-read is comfortably ahead of them.</p>
           <p class="small muted" style="margin-top:10px">Every read is kept as a snapshot for 180 days, together with what changed since the one before. After that the snapshots are deleted: long enough to show a price moving, short enough that an old archive never gets mistaken for today&rsquo;s price.</p>
           <p class="small muted" style="margin-top:10px">Both jobs are installed as machine timers that survive a reboot, so neither one depends on anyone remembering. The sweep is deliberately scheduled <b>after</b> the moment the monthly search allowance refreshes &mdash; that refresh falls on the first of each month at 09:00 KST, which we measured from the API&rsquo;s own rate-limit headers, so the sweep runs at 10:00 that day and then again on Thursdays. Waking up before the allowance refreshes would waste the run.</p>
@@ -189,6 +191,7 @@
         <div class="panel">
           <h3>The five filters, and how much of the registry fills them</h3>
           <p class="p-sub">Every filter on the clinic list comes from the registry itself, so a figure we show is the clinic&rsquo;s own record rather than our estimate. Three of the five are close to complete. Two are not.</p>
+          <div class="table-scroll">
           <table class="metric-table">
             <thead><tr><th>Filter</th><th>Registry field</th><th>Coverage in the 2,387-clinic pool</th><th>Of the 44 listed here</th></tr></thead>
             <tbody>
@@ -224,6 +227,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
           <div class="notice warm" style="margin-top:16px">
             <div class="n-ic" style="background:var(--accent)">!</div>
             <div>
@@ -237,6 +241,7 @@
         <div class="panel">
           <h3>How we treat a clinic&rsquo;s site</h3>
           <p class="p-sub">We audit the rules on every site before we collect from it.</p>
+          <div class="table-scroll">
           <table class="metric-table">
             <thead><tr><th>Rule</th><th>What we found across 585 hosts</th><th>What we do</th></tr></thead>
             <tbody>
@@ -267,6 +272,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
 
         <div class="panel">

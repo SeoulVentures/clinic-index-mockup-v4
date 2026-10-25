@@ -132,13 +132,38 @@
 }
 .nb-mix .mix-pill b{color:var(--brand);font-weight:650}
 
+/* ---------- mobile: horizontally scrolling table holder ---------- */
+.table-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+.table-scroll table{min-width:100%}
+
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
   .cov-grid{grid-template-columns:1fr 1fr}
+  /* grid tracks must be allowed to shrink below their content width */
+  .hero-grid,.detail-grid,.list-layout{grid-template-columns:minmax(0,1fr)}
 }
+.list-layout > *,.detail-grid > *,.hero-grid > *{min-width:0}
+
 @media (max-width:760px){
   .cov-grid{grid-template-columns:1fr}
   .funnel-step{grid-template-columns:24px 1fr;row-gap:6px}
   .funnel-step .fs-v{grid-column:2;text-align:left}
   .price-table .pt-src{width:auto}
+
+  /* long figures may wrap instead of forcing the table wide */
+  .metric-table .mt-n{white-space:normal}
+
+  /* two-column sections stack — the left column no longer starves the right */
+  .split2{flex-direction:column;align-items:stretch;gap:28px!important}
+  .split2 > *{max-width:none!important;min-width:0!important;flex:0 0 auto!important}
+
+  /* list toolbar wraps instead of squeezing the toggle */
+  .list-toolbar{flex-direction:column;align-items:flex-start;gap:10px}
+  .list-toolbar .lt-l{flex-wrap:wrap;gap:6px}
+  .lt-r{flex-wrap:wrap}
+  .seg{flex:none}
+
+  /* the review palette switcher wraps onto its own rows */
+  .mock-nav{white-space:normal}
+  .mock-nav > div{margin-left:0!important;padding-left:0!important;border-left:0!important;flex-wrap:wrap;row-gap:6px}
 }
